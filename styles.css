@@ -1,0 +1,175 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  background-color: #0a0f1c; /* deep dark blue */
+  color: #fff;
+}
+
+/* Navigation */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #111a2b;
+  border-bottom: 1px solid #2a3550;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #cfd8ff; /* chrome accent */
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #aab6ff;
+}
+
+/* Services Section */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 4rem 2rem;
+}
+
+.card {
+  background: #111a2b;
+  border: 1px solid #2a3550;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card.active {
+  border-color: #00e0ff; /* chrome accent */
+}
+
+.card.coming-soon {
+  opacity: 0.85;
+  background: #1a2235; /* darker blue for contrast */
+  border: 1px dashed #4a5a80;
+}
+
+.card.coming-soon h2 {
+  color: #d0d6f5; /* lighter text for visibility */
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.3rem 0.6rem;
+  background: #4a5a80;
+  color: #fff;
+  font-size: 0.8rem;
+  border-radius: 5px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.2rem;
+  background: #00e0ff;
+  color: #000;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #00b8cc;
+}
+
+/* Features Section */
+.features {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.feature {
+  flex: 1 1 250px;
+  background: #111a2b;
+  border: 1px solid #2a3550;
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+.feature i {
+  font-size: 2rem;
+  color: #00e0ff;
+  margin-bottom: 1rem;
+}
+
+/* About Section */
+.about {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about p {
+  color: #aab6ff;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Call to Action */
+.cta {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+  background: #111a2b;
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid #2a3550;
+}
+
+footer a {
+  color: #00e0ff;
+  text-decoration: none;
+}
