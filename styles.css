@@ -510,16 +510,15 @@ body {
 .social-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.8rem 1.5rem;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
   background: rgba(0, 224, 255, 0.1);
   border: 1px solid rgba(0, 224, 255, 0.3);
   border-radius: 8px;
-  font-size: 1rem;
   color: #00e0ff;
   transition: all 0.3s ease;
   text-decoration: none;
-  font-weight: 600;
 }
 
 .social-link:hover {
@@ -591,11 +590,6 @@ footer {
   .contact-links {
     flex-direction: column;
     align-items: center;
-  }
-  
-  .social-link {
-    width: fit-content;
-    min-width: 250px;
   }
 }
 
