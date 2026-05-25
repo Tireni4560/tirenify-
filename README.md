@@ -91,7 +91,7 @@ The goal of this homepage is to serve as the official public-facing entry point 
 
 ## Authorship
 
-Lead design and development by Daniel Tirenioluwa Adeleye. Tirenify is an independent initiative focused on privacy-first exposure awareness — helping people discover whether personal data appears in publicly disclosed breach records while prioritizing transparency and practical guidance.
+Lead design and development by Daniel Tirenioluwa Adeleye. Tirenify is an independent initiative focused on privacy-first exposure awareness helping people discover whether personal data appears in publicly disclosed breach records while prioritizing transparency and practical guidance.
 
 © 2026 Tirenify. All rights reserved.
 
