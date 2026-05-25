@@ -95,4 +95,19 @@ Lead design and development by Daniel Tirenioluwa Adeleye. Tirenify is an indepe
 
 © 2026 Tirenify. All rights reserved.
 
+---
+
+## Local Preview
+
+To run locally:
+
+1. Clone the repository
+2. Open the project folder
+3. Launch `index.html` in a browser
+
+Or use a lightweight local server such as:
+
+```bash
+npx serve
+
 
