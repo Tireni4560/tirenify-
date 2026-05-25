@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tirenify | Digital Exposure Awareness</title>
+  <meta name="description" content="Tirenify helps you understand if your email appears in public breach records and gives you privacy-aware guidance to protect your identity." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#home">
+          <span class="brand-mark">T</span>
+          <span class="brand-name">Tirenify</span>
+        </a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-expanded="false" aria-controls="site-navigation">
+          <span class="toggle-bar"></span>
+          <span class="toggle-bar"></span>
+          <span class="toggle-bar"></span>
+          <span class="sr-only">Open navigation</span>
+        </button>
+        <nav class="site-nav" id="site-navigation" aria-label="Primary navigation">
+          <a href="#features">Features</a>
+          <a href="#checker">Exposure Check</a>
+          <a href="#trust">Trust</a>
+          <a href="#roadmap">Roadmap</a>
+          <a href="#how">How it Works</a>
+        </nav>
+        <div class="header-actions">
+          <a class="btn btn-ghost" href="#checker">Run a Check</a>
+          <a class="btn btn-primary" href="#checker">Start Now</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Privacy-first exposure awareness</span>
+            <h1>Understand where your digital identity has been exposed.</h1>
+            <p>Tirenify helps you check whether your email appears in public breach records and provides privacy-focused awareness tools to help you respond with confidence.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#checker">Check your exposure</a>
+              <a class="btn btn-secondary" href="#trust">Why it matters</a>
+            </div>
+            <div class="hero-metrics">
+              <div>
+                <strong>100%</strong>
+                <span>Public breach data</span>
+              </div>
+              <div>
+                <strong>No password</strong>
+                <span>Required to search</span>
+              </div>
+              <div>
+                <strong>Built for trust</strong>
+                <span>Privacy-aware reporting</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-panel" aria-hidden="true">
+            <div class="panel-surface">
+              <div class="panel-header">
+                <span>Exposure overview</span>
+                <span class="status-pill status-safe">Verified</span>
+              </div>
+              <div class="panel-body">
+                <div class="panel-row">
+                  <span>Checked identity</span>
+                  <strong>email@example.com</strong>
+                </div>
+                <div class="panel-row highlight">
+                  <span>Exposure status</span>
+                  <strong>3 records found</strong>
+                </div>
+                <div class="panel-meta">
+                  <span>Latest breach: Q4 2025</span>
+                  <span>Data types: Email, login</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-features" id="features">
+        <div class="container section-head">
+          <span class="eyebrow">Core capabilities</span>
+          <h2>Privacy-aware visibility for digital exposure.</h2>
+          <p>Everything is designed to help you understand your exposure quickly, without unnecessary tracking and with the clarity needed to act.</p>
+        </div>
+        <div class="container feature-grid">
+          <article class="feature-card">
+            <h3>Breach visibility</h3>
+            <p>Discover if your email appears in verified public breach records from multiple sources.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Exposure awareness</h3>
+            <p>See where your identity is visible and what types of exposure are affecting your accounts.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Privacy-first checks</h3>
+            <p>Run searches without passwords, cookies, or hidden tracking — only the information you share is used.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Actionable guidance</h3>
+            <p>Receive clear next steps for securing accounts, monitoring changes, and reducing future risk.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Digital trust</h3>
+            <p>Build stronger awareness around your identity with a product focused on accountability and transparency.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Future monitoring</h3>
+            <p>Track exposure trends over time and prepare for the next stage of alerts and protection.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-checker" id="checker">
+        <div class="container checker-grid">
+          <div class="checker-copy">
+            <span class="eyebrow">Exposure checker</span>
+            <h2>Check your email against public breach records.</h2>
+            <p>Enter an email address to see whether it appears in known leaks. No passwords, no account sign-ins, just straight exposure awareness.</p>
+            <form class="checker-form" id="checker-form">
+              <label class="form-label" for="email-input">Email address</label>
+              <div class="input-group">
+                <input class="input-field" id="email-input" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+                <button class="btn btn-primary" type="submit">Check exposure</button>
+              </div>
+              <p class="form-note">We use publicly available breach records and respect your privacy at every step.</p>
+            </form>
+          </div>
+          <div class="checker-panel" aria-hidden="true">
+            <div class="checker-surface">
+              <div class="checker-status">
+                <span>Search result</span>
+                <div class="status-pill status-alert">Exposure detected</div>
+              </div>
+              <div class="checker-summary">
+                <p>Recent breach data shows this email appears in multiple publicly disclosed incidents. Review the details and take proactive steps.</p>
+              </div>
+              <div class="checker-details">
+                <div>
+                  <strong>Data types</strong>
+                  <span>Email, password hash, login time</span>
+                </div>
+                <div>
+                  <strong>First seen</strong>
+                  <span>May 2025</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-trust" id="trust">
+        <div class="container trust-grid">
+          <div>
+            <span class="eyebrow">Trust & privacy</span>
+            <h2>Designed for privacy, transparency, and meaningful exposure awareness.</h2>
+            <p>Tirenify never asks for your password. We avoid unnecessary tracking, and we rely on publicly sourced breach data so you can focus on the facts.</p>
+          </div>
+          <div class="trust-list">
+            <div class="trust-item">
+              <h3>No password required</h3>
+              <p>Search exposure with just an email address. No account credentials or login data ever needed.</p>
+            </div>
+            <div class="trust-item">
+              <h3>Minimal data usage</h3>
+              <p>We only process the email you enter for the check, and we do not persist identifiable tracking data.</p>
+            </div>
+            <div class="trust-item">
+              <h3>Public breach sources</h3>
+              <p>Analysis is grounded in known, publicly disclosed breach records and verified exposure sources.</p>
+            </div>
+            <div class="trust-item">
+              <h3>Transparent reporting</h3>
+              <p>Clear results, clear guidance, and a product that prioritizes security over sensationalism.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-roadmap" id="roadmap">
+        <div class="container section-head">
+          <span class="eyebrow">Product roadmap</span>
+          <h2>Where Tirenify is headed next.</h2>
+          <p>A practical path from awareness to continuous protection and digital trust infrastructure.</p>
+        </div>
+        <div class="container roadmap-grid">
+          <article class="roadmap-card">
+            <div class="roadmap-step">Phase 1</div>
+            <h3>Awareness</h3>
+            <p>Baseline visibility into exposed email identities, breach context, and exposure summaries for immediate awareness.</p>
+          </article>
+          <article class="roadmap-card">
+            <div class="roadmap-step">Phase 2</div>
+            <h3>Alerts</h3>
+            <p>Real-time notifications when new exposure appears for tracked identities, with prioritized guidance for action.</p>
+          </article>
+          <article class="roadmap-card">
+            <div class="roadmap-step">Phase 3</div>
+            <h3>Protection</h3>
+            <p>Deeper protection tools, risk scoring, and automated recommendations to help reduce future exposure.</p>
+          </article>
+          <article class="roadmap-card">
+            <div class="roadmap-step">Phase 4</div>
+            <h3>Digital Trust Infrastructure</h3>
+            <p>Secure identity management foundations for enterprises and individuals who need stronger digital trust controls.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-how" id="how">
+        <div class="container section-head">
+          <span class="eyebrow">How it works</span>
+          <h2>A simple, privacy-aware workflow.</h2>
+        </div>
+        <div class="container how-grid">
+          <article class="how-step">
+            <span class="step-number">1</span>
+            <h3>Enter your email</h3>
+            <p>Provide the address you want to check. No login or password is required.</p>
+          </article>
+          <article class="how-step">
+            <span class="step-number">2</span>
+            <h3>Review exposure</h3>
+            <p>See if your email appears in known public breaches and understand the type of exposure detected.</p>
+          </article>
+          <article class="how-step">
+            <span class="step-number">3</span>
+            <h3>Take action</h3>
+            <p>Use practical guidance to secure accounts, monitor your identity, and reduce future risk.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-cta final-cta">
+        <div class="container cta-panel">
+          <div>
+            <span class="eyebrow">Ready to know</span>
+            <h2>Check your digital exposure in seconds.</h2>
+            <p>Tirenify gives you immediate clarity on whether your email has been included in public breach records  no fluff, no distractions.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="#checker">Run the check</a>
+            <a class="btn btn-ghost" href="#trust">Learn about privacy</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-top">
+        <div class="footer-brand-area">
+          <a class="brand footer-brand" href="#home">Tirenify</a>
+          <p class="footer-tag">Privacy-aware exposure awareness for modern digital lives.</p>
+          <div class="social-row">
+  <a 
+    href="https://x.com/tirenify" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    class="social-link" 
+    aria-label="Tirenify on X"
+  >
+    <i class="fa-brands fa-x-twitter"></i>
+  </a>
+</div>
+        </div>
+
+        <nav class="footer-navs" aria-label="Footer navigation">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="#features">Features</a>
+            <a href="#checker">Exposure Checker</a>
+            <a href="#roadmap">Roadmap</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#trust">Trust</a>
+            <a href="#how">How it works</a>
+          </div>
+        </nav>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>© 2026 Tirenify. Built for privacy and clear exposure awareness.</p>
+      </div>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
