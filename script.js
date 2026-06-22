@@ -1,38 +1,127 @@
-﻿const mobileToggle = document.getElementById('mobile-toggle');
+﻿// =====================================================
+// TIRENIFY - Premium Cybersecurity Homepage Scripts
+// =====================================================
+
+// Mobile navigation toggle
+const mobileToggle = document.getElementById('mobile-toggle');
 const nav = document.getElementById('site-navigation');
-const checkerForm = document.getElementById('checker-form');
 
-mobileToggle?.addEventListener('click', () => {
-  const expanded = mobileToggle.getAttribute('aria-expanded') === 'true';
-  mobileToggle.setAttribute('aria-expanded', String(!expanded));
-  nav.classList.toggle('open');
-  mobileToggle.classList.toggle('open');
-  document.querySelector('.header-actions')?.classList.toggle('open');
-});
+if (mobileToggle && nav) {
+  mobileToggle.addEventListener('click', () => {
+    const expanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+    mobileToggle.setAttribute('aria-expanded', String(!expanded));
+    mobileToggle.classList.toggle('open');
+    nav.classList.toggle('open');
+    
+    // Prevent body scroll when nav is open
+    document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+  });
 
-checkerForm?.addEventListener('submit', event => {
-  event.preventDefault();
-  const input = document.getElementById('email-input');
-  if (!input) return;
-  const email = input.value.trim();
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  // Close mobile nav when clicking nav links
+  const navLinks = Array.from(nav.querySelectorAll('a'));
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (nav.classList.contains('open')) {
+        nav.classList.remove('open');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        mobileToggle.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+  });
 
-  if (!emailPattern.test(email)) {
-    input.setCustomValidity('Please enter a valid email address.');
-    input.reportValidity();
-    return;
-  }
-
-  const targetUrl = `https://tirenify-v0-production.up.railway.app/?email=${encodeURIComponent(email)}`;
-  window.location.href = targetUrl;
-});
-
-const navLinks = Array.from(nav.querySelectorAll('a'));
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
+  // Close mobile nav when clicking outside
+  document.addEventListener('click', (e) => {
     if (nav.classList.contains('open')) {
-      nav.classList.remove('open');
-      mobileToggle.setAttribute('aria-expanded', 'false');
+      if (!nav.contains(e.target) && !mobileToggle.contains(e.target)) {
+        nav.classList.remove('open');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        mobileToggle.classList.remove('open');
+        document.body.style.overflow = '';
+      }
     }
   });
+}
+
+// Header scroll state for frosted glass effect
+const headerEl = document.querySelector('.site-header');
+if (headerEl) {
+  let lastScrollY = 0;
+  const scrollThreshold = 60;
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    
+    // Add/remove scrolled class based on scroll position
+    headerEl.classList.toggle('scrolled', currentScrollY > scrollThreshold);
+    
+    lastScrollY = currentScrollY;
+  }, { passive: true });
+}
+
+// Scroll reveal animation using IntersectionObserver
+(function setupReveal() {
+  const revealElements = document.querySelectorAll('[data-reveal]');
+  
+  if (revealElements.length === 0) return;
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { 
+    threshold: 0.12, 
+    rootMargin: '0px 0px -50px 0px' 
+  });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+})();
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    if (href === '#') return;
+    
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) {
+      const headerHeight = document.querySelector('.site-header')?.offsetHeight || 72;
+      const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight - 20;
+      
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+      
+      // Close mobile nav if open
+      if (nav && nav.classList.contains('open')) {
+        nav.classList.remove('open');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        mobileToggle.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    }
+  });
+});
+
+// Keyboard accessibility for mobile toggle
+if (mobileToggle) {
+  mobileToggle.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      mobileToggle.click();
+    }
+  });
+}
+
+// Handle resize events for cleanup
+window.addEventListener('resize', () => {
+  // Reset body overflow on resize if nav is not open
+  if (nav && !nav.classList.contains('open')) {
+    document.body.style.overflow = '';
+  }
 });
