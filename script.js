@@ -72,15 +72,6 @@ if (headerEl) {
         revealObserver.unobserve(entry.target);
       }
     });
-  }, { 
-    threshold: 0.12, 
-    rootMargin: '0px 0px -50px 0px' 
-  });
-
-  revealElements.forEach(el => revealObserver.observe(el));
-})();
-
-// Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     const href = this.getAttribute('href');
@@ -89,39 +80,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     e.preventDefault();
     const target = document.querySelector(href);
     if (target) {
-      const headerHeight = document.querySelector('.site-header')?.offsetHeight || 72;
+      const headerHeight = document.querySelector('.site-header')?.offsetHeight || 68;
       const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight - 20;
       
       window.scrollTo({
         top: targetPosition,
         behavior: 'smooth'
       });
-      
-      // Close mobile nav if open
-      if (nav && nav.classList.contains('open')) {
-        nav.classList.remove('open');
-        mobileToggle.setAttribute('aria-expanded', 'false');
-        mobileToggle.classList.remove('open');
-        document.body.style.overflow = '';
-      }
     }
   });
-});
-
-// Keyboard accessibility for mobile toggle
-if (mobileToggle) {
-  mobileToggle.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      mobileToggle.click();
-    }
-  });
-}
-
-// Handle resize events for cleanup
-window.addEventListener('resize', () => {
-  // Reset body overflow on resize if nav is not open
-  if (nav && !nav.classList.contains('open')) {
-    document.body.style.overflow = '';
-  }
 });
