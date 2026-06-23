@@ -378,39 +378,53 @@ p {
 /* ===== MOBILE TOGGLE ===== */
 .mobile-toggle {
   display: none;
-  border: none;
+  position: relative;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
   background: transparent;
-  padding: 0.5rem;
-  margin-left: auto;
+  padding: 0;
   cursor: pointer;
-  border-radius: var(--radius-md);
-  transition: background var(--dur-fast) ease;
+  transition: all var(--dur-fast) ease;
+  margin-left: auto;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  color: var(--text);
 }
 
 .mobile-toggle:hover {
-  background: var(--bg-surface);
+  border-color: var(--accent);
 }
 
 .mobile-toggle .toggle-bar {
-  display: block;
-  width: 20px;
+  position: absolute;
+  left: 50%;
+  width: 1rem;
   height: 2px;
-  background: currentColor;
-  border-radius: 1px;
-  transition: transform var(--dur-fast) ease, opacity var(--dur-fast) ease;
+  border-radius: 999px;
+  background: var(--text);
+  transform-origin: center;
+  transition: transform 0.24s ease, opacity 0.2s ease, top 0.24s ease;
 }
 
-.mobile-toggle .toggle-bar + .toggle-bar {
-  margin-top: 5px;
+.mobile-toggle .toggle-bar:nth-child(1) {
+  top: 1rem;
+  transform: translateX(-50%);
+}
+
+.mobile-toggle .toggle-bar:nth-child(2) {
+  top: 1.35rem;
+  transform: translateX(-50%);
+}
+
+.mobile-toggle .toggle-bar:nth-child(3) {
+  top: 1.7rem;
+  transform: translateX(-50%);
 }
 
 .mobile-toggle.open .toggle-bar:nth-child(1) {
-  transform: translateY(6px) rotate(45deg);
+  top: 1.35rem;
+  transform: translateX(-50%) rotate(45deg);
 }
 
 .mobile-toggle.open .toggle-bar:nth-child(2) {
@@ -418,7 +432,8 @@ p {
 }
 
 .mobile-toggle.open .toggle-bar:nth-child(3) {
-  transform: translateY(-6px) rotate(-45deg);
+  top: 1.35rem;
+  transform: translateX(-50%) rotate(-45deg);
 }
 
 /* Mobile Navigation */
