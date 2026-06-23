@@ -1760,4 +1760,8 @@ p {
 .mobile-nav-link {
   font-size: 32px;
   white-space: nowrap;
+}.mobile-nav-link {
+  font-size: 32px;
+  white-space: nowrap;
+  max-width: 100%;
 }
