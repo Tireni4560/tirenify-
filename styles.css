@@ -1757,3 +1757,7 @@ p {
 .mobile-nav-link {
   font-size: 32px;
 }
+.mobile-nav-link {
+  font-size: 32px;
+  white-space: nowrap;
+}
