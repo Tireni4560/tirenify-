@@ -40,6 +40,23 @@
       </div>
     </header>
 
+    <!-- Mobile menu overlay (sits outside the header so it is not affected by scroll state) -->
+    <div class="mobile-overlay" id="mobile-overlay" aria-hidden="true">
+      <div class="mobile-overlay-inner">
+        <button class="mobile-close" id="mobile-close" aria-label="Close navigation">
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+          <a href="#features" class="mobile-nav-link">Features</a>
+          <a href="#checker" class="mobile-nav-link">Exposure Check</a>
+          <a href="#trust" class="mobile-nav-link">Trust</a>
+          <a href="#roadmap" class="mobile-nav-link">Roadmap</a>
+          <a href="#how" class="mobile-nav-link">How it Works</a>
+        </nav>
+      </div>
+    </div>
+
     <main role="main">
       <!-- Hero Section -->
       <section class="hero" id="home" aria-label="Introduction">
