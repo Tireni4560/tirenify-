@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    url: 'https://tirenify.netlify.app/',
+    url: 'https://tirenify.app/',
     siteName: 'Tirenify',
     title: 'Tirenify | Digital Exposure Awareness',
     description:
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     locale: 'en_GB',
     images: [
       {
-        url: 'https://tirenify.netlify.app/og-image.jpg',
+        url: 'https://tirenify.app/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Tirenify — Know if your data has been breached',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
       'Tirenify helps you understand if your email appears in public breach records and gives you privacy-aware guidance to protect your identity.',
     images: [
       {
-        url: 'https://tirenify.netlify.app/og-image.jpg',
+        url: 'https://tirenify.app/og-image.jpg',
         alt: 'Tirenify — Know if your data has been breached',
       },
     ],
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   themeColor: '#09090b',
   authors: [{ name: 'Daniel Adeleye' }],
   robots: 'index, follow',
-  canonical: 'https://tirenify.netlify.app/',
+  canonical: 'https://tirenify.app/',
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

@@ -91,7 +91,7 @@ const HOW_IT_WORKS = [
   },
 ];
 
-const CHECKER_URL = 'https://breachchecker-rho.vercel.app/';
+const CHECKER_URL = 'https://check.tirenify.app/';
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
