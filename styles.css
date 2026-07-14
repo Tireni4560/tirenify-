@@ -1135,24 +1135,29 @@ p {
 }
 
 .founder-grid {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
   align-items: center;
 }
 
 .founder-media {
-  width: 120px;
-  justify-self: start;
+  flex: 0 0 auto;
+  width: 140px;
 }
 
 .founder-media img {
   display: block;
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 8px;
   border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.founder-copy {
+  flex: 1;
+  text-align: left;
 }
 
 .founder-copy h2 {
@@ -1762,12 +1767,22 @@ p {
   }
 
   .founder-media {
-    width: 100px;
+    width: 120px;
   }
 
   .founder-media img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .founder-grid {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .founder-copy {
+    text-align: center;
   }
 
   .hero-metrics {
