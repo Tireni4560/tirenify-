@@ -1074,6 +1074,110 @@ p {
   font-size: 0.875rem;
 }
 
+/* ===== PURPOSE SECTION ===== */
+.section-purpose {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.015), rgba(255, 255, 255, 0.005));
+}
+
+.purpose-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.purpose-copy h2 {
+  margin: 0.75rem 0 1rem;
+  color: var(--text);
+  max-width: 18ch;
+}
+
+.purpose-copy p {
+  max-width: 62ch;
+  font-size: 1.025rem;
+}
+
+.purpose-stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.9rem;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+}
+
+.purpose-stat strong {
+  color: var(--accent-light);
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.25rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.purpose-stat span {
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.purpose-stat p {
+  font-size: 0.85rem;
+  color: var(--text-faint);
+  line-height: 1.6;
+}
+
+/* ===== FOUNDER SECTION ===== */
+.section-founder {
+  background: var(--bg-deep);
+}
+
+.founder-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.founder-media {
+  width: 120px;
+  justify-self: start;
+}
+
+.founder-media img {
+  display: block;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.founder-copy h2 {
+  margin: 0.75rem 0 0.5rem;
+  color: var(--text);
+}
+
+.founder-title {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.founder-copy p {
+  max-width: 60ch;
+  font-size: 1.0125rem;
+}
+
+.founder-copy p + p {
+  margin-top: 1rem;
+}
+
 /* ===== TRUST SECTION ===== */
 .trust-grid {
   display: grid;
@@ -1543,6 +1647,36 @@ p {
     margin: 0 auto;
   }
 
+  .purpose-grid,
+  .founder-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .purpose-copy,
+  .founder-copy {
+    text-align: center;
+  }
+
+  .purpose-copy h2,
+  .founder-copy h2,
+  .purpose-copy p,
+  .founder-copy p {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .founder-media {
+    width: 140px;
+    margin: 0 auto;
+  }
+
+  .founder-media img {
+    width: 140px;
+    height: 140px;
+  }
+
   .trust-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
@@ -1621,6 +1755,19 @@ p {
   .roadmap-grid,
   .how-grid {
     grid-template-columns: 1fr;
+  }
+
+  .purpose-stat {
+    padding: 1.5rem;
+  }
+
+  .founder-media {
+    width: 100px;
+  }
+
+  .founder-media img {
+    width: 100px;
+    height: 100px;
   }
 
   .hero-metrics {
