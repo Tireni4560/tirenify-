@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GLMY1NGS19"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-GLMY1NGS19');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GLMY1NGS19"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GLMY1NGS19');
+  </script>
   <!-- ═══════════════════════════════════════════
        PRIMARY META
   ═══════════════════════════════════════════ -->
@@ -17,28 +16,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tirenify | Built for African Internet Users</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="apple-touch-icon" href="/og-image.jpg" />
-  <meta name="description" content="Check if your email appears in known data breaches — free, instant, nothing stored. Peace of mind in seconds. Built for African internet users facing real regional threats." />
+  <meta name="description" content="Check if your email appears in known data breaches — free, instant, nothing stored. Know before they do. Built for the threats African internet users actually face." />
   <meta name="author" content="Daniel Adeleye" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#09090b" />
+  <meta name="theme-color" content="#ecece8" />
   <link rel="canonical" href="https://tirenify.app/" />
 
   <!-- ═══════════════════════════════════════════
-       OPEN GRAPH — WhatsApp, Facebook, LinkedIn,
-       Discord, Telegram, Slack
+       OPEN GRAPH
   ═══════════════════════════════════════════ -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://tirenify.app/" />
   <meta property="og:site_name" content="Tirenify" />
   <meta property="og:title" content="Tirenify | Built for African Internet Users" />
-  <meta property="og:description" content="Check if your email appears in known data breaches — free, instant, nothing stored. Peace of mind in seconds. Built for African internet users facing real regional threats." />
+  <meta property="og:description" content="Check if your email appears in known data breaches — free, instant, nothing stored. Know before they do." />
   <meta property="og:locale" content="en_GB" />
   <meta property="og:image" content="https://tirenify.app/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Tirenify — Know if your data has been breached before attackers use it" />
-  <meta property="og:image:type" content="image/jpeg" />
 
   <!-- ═══════════════════════════════════════════
        TWITTER / X CARD
@@ -48,401 +44,352 @@
   <meta name="twitter:creator" content="@tirenify" />
   <meta name="twitter:url" content="https://tirenify.app/" />
   <meta name="twitter:title" content="Tirenify | Built for African Internet Users" />
-  <meta name="twitter:description" content="Check if your email appears in known data breaches — free, instant, nothing stored. Peace of mind in seconds. Built for African internet users facing real regional threats." />
+  <meta name="twitter:description" content="Check if your email appears in known data breaches — free, instant, nothing stored. Know before they do." />
   <meta name="twitter:image" content="https://tirenify.app/og-image.jpg" />
-  <meta name="twitter:image:alt" content="Tirenify — Know if your data has been breached before attackers use it" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="page-shell">
+
     <!-- Navigation -->
     <header class="site-header" role="banner">
       <div class="container header-inner">
-        <a class="brand" href="#home">
-          <span class="brand-mark">T</span>
-          <span class="brand-name">Tirenify</span>
+        <a class="brand" href="#home" aria-label="Tirenify home">
+          <span class="brand-mark" aria-hidden="true">T</span>
+          <span class="brand-name wordmark" data-split="Tirenify" aria-label="Tirenify"></span>
+          <span class="trust-pill">78+ users protected</span>
         </a>
-        <button class="mobile-toggle" id="mobile-toggle" aria-expanded="false" aria-controls="site-navigation" aria-label="Toggle navigation">
-          <span class="toggle-bar"></span>
-          <span class="toggle-bar"></span>
-          <span class="toggle-bar"></span>
-        </button>
-        <nav class="site-nav" id="site-navigation" aria-label="Primary navigation">
-          <a href="#features">Features</a>
-          <a href="#checker">Exposure Check</a>
-          <a href="#trust">Trust</a>
 
-          <a href="#how">How it Works</a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="#home">Home</a>
+          <a href="#product">Product</a>
+          <a href="#how">How it works</a>
+          <a href="#why">Why it exists</a>
+          <a class="btn btn-primary btn-nav" href="https://check.tirenify.app/" target="_blank" rel="noopener noreferrer">Check My Email</a>
         </nav>
-        <div class="header-actions">
-          <a class="btn btn-ghost" href="https://check.tirenify.app/" target="_blank" rel="noopener noreferrer">Run a Check</a>
-          <a class="btn btn-primary" href="https://check.tirenify.app/" target="_blank" rel="noopener noreferrer">Start Now</a>
-        </div>
+
+        <button class="mobile-toggle" id="mobile-toggle" aria-expanded="false" aria-controls="mobile-overlay" aria-label="Open menu">
+          <span class="hamburger-line line-1"></span>
+          <span class="hamburger-line line-2"></span>
+          <span class="hamburger-line line-3"></span>
+        </button>
       </div>
     </header>
 
-    <!-- Mobile menu overlay (sits outside the header so it is not affected by scroll state) -->
+    <!-- Mobile full-screen overlay menu -->
     <div class="mobile-overlay" id="mobile-overlay" aria-hidden="true">
       <div class="mobile-overlay-inner">
-        <button class="mobile-close" id="mobile-close" aria-label="Close navigation">
-          <span></span>
-          <span></span>
-        </button>
         <nav class="mobile-nav" aria-label="Mobile navigation">
-          <a href="#features" class="mobile-nav-link">Features</a>
-          <a href="#checker" class="mobile-nav-link">Exposure Check</a>
-          <a href="#trust" class="mobile-nav-link">Trust</a>
-          <a href="#how" class="mobile-nav-link">How it Works</a>
+          <a href="#home" class="mobile-nav-link">Home</a>
+          <a href="#product" class="mobile-nav-link">Product</a>
+          <a href="#how" class="mobile-nav-link">How it works</a>
+          <a href="#why" class="mobile-nav-link">Why it exists</a>
+          <a href="#founder" class="mobile-nav-link">Founder</a>
+          <a class="mobile-cta" href="https://check.tirenify.app/" target="_blank" rel="noopener noreferrer">Check My Email</a>
         </nav>
       </div>
     </div>
 
     <main role="main">
-      <!-- Hero Section -->
+
+      <!-- ══════════ HERO ══════════ -->
       <section class="hero" id="home" aria-label="Introduction">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <span class="eyebrow">Digital Security Platform</span>
-            <h1>Built for African internet users. Know if your data has been exposed to threats targeting you.</h1>
-            <p class="hero-subheading">Peace of mind in seconds. Enter your email, get your result, know what to do next. Built for the digital threats African users actually face.</p>
-            
-            <!-- Trust Badges -->
-            <div class="trust-badges" role="list" aria-label="Key features">
-              <span class="trust-badge" role="listitem">
-                <i class="fas fa-shield-halved" aria-hidden="true"></i>
-                <span>Result in seconds</span>
-              </span>
-              <span class="trust-badge" role="listitem">
-                <i class="fas fa-user-check" aria-hidden="true"></i>
-                <span>No signup needed</span>
-              </span>
-              <span class="trust-badge" role="listitem">
-                <i class="fas fa-lock" aria-hidden="true"></i>
-                <span>Free, always</span>
-              </span>
-            </div>
-
+            <span class="eyebrow hero-eyebrow">Digital security for Africa</span>
+            <h1 class="hero-title">Know before<br>they do.</h1>
+            <p class="hero-support">Tirenify is a free breach checker built for the threats African internet users actually face. Enter any email and we check it against known, publicly disclosed breaches — so you find out if your data is exposed, which sites leaked it, and what to do next. In seconds, without storing anything.</p>
             <div class="hero-actions">
-              <p style="font-size: 13px; color: var(--text-muted); text-align: center; margin-bottom: 12px;">Enter your email → See if you've been breached → Get next steps</p>
               <a class="btn btn-primary btn-lg" href="https://check.tirenify.app/" target="_blank" rel="noopener noreferrer">
-                <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
-                Check Your Exposure Now
+                Check My Email
+                <span class="btn-arrow" aria-hidden="true">&rarr;</span>
               </a>
-              <a class="btn btn-secondary" href="#trust">Why it matters</a>
             </div>
-            
-            <!-- Stats Bar -->
-            <div class="hero-metrics" role="list" aria-label="Platform statistics">
-              <div role="listitem"> 
-                <strong>100%</strong>
-                <span>Public breach data</span>
-              </div>
-              <div role="listitem">
-                <strong>No password</strong>
-                <span>Required to search</span>
-              </div>
-              <div role="listitem">
-                <strong>Built for trust</strong>
-                <span>Privacy-aware reporting</span>
-              </div>
+            <div class="hero-meta">
+              <span>Result in seconds</span>
+              <span class="meta-sep" aria-hidden="true">/</span>
+              <span>No signup needed</span>
+              <span class="meta-sep" aria-hidden="true">/</span>
+              <span>Free, always</span>
             </div>
           </div>
-          
-          <!-- Mock UI Panel -->
-          <div class="hero-panel" aria-label="Sample exposure report">
-            <div class="panel-surface">
-              <div class="panel-header">
-                <span>Exposure Overview</span>
-                <span class="status-pill status-safe">
-                  <span class="status-dot" aria-hidden="true"></span>
-                  Verified
-                </span>
-              </div>
-              <div class="panel-body">
-                <div class="panel-row">
-                  <span>Checked identity</span>
-                  <strong>user@example.com</strong>
-                </div>
-                <div class="panel-row highlight">
-                  <span>Exposure status</span>
-                  <strong>3 records found</strong>
-                </div>
-                <div class="panel-meta">
-                  <span>Latest breach: Q4 2025</span>
-                  <span>Data types: Email, login</span>
-                </div>
-              </div>
+<!-- ══════ TECHNICAL DIAGRAM (desktop, landscape) ══════ -->
+          <div class="diagram-wrap diagram-desktop" id="diagram" role="img"
+               aria-label="Diagram showing how Tirenify checks your email against existing breach records and reveals whether it is safe or exposed">
+            <div class="diagram-inner">
+              <svg class="diagram" viewBox="0 0 580 560" fill="none" aria-hidden="true">
+                <!-- Connective paths -->
+                <g class="diagram-paths" fill="none" stroke="rgba(10,10,10,0.30)" stroke-width="2">
+                  <path class="dp dp-1" pathLength="1" d="M 290 306 L 290 352"/>
+                  <path class="dp dp-2" pathLength="1" d="M 285 408 C 235 432 212 446 202 462"/>
+                  <path class="dp dp-3" pathLength="1" d="M 295 408 C 345 432 368 446 378 462"/>
+                </g>
+
+                <!-- Stage: PROTECT — Tirenify shield watches over -->
+                <g class="node node-shield">
+                  <text class="diagram-stage" x="290" y="36" text-anchor="middle">Protect</text>
+                  <circle class="hub-pulse" cx="290" cy="120" r="82" fill="none" stroke="#166534" stroke-width="1.5"/>
+                  <path d="M 290 56 Q 330 60 338 73 L 342 95 Q 342 140 290 206 Q 238 140 238 95 L 242 73 Q 250 60 290 56 Z" fill="#0a0a0a"/>
+                  <text class="diagram-label engine-title" x="290" y="118" text-anchor="middle" fill="#ecece8">TIRENIFY</text>
+                  <text class="diagram-text" x="290" y="224" text-anchor="middle" fill="#166534">watches over</text>
+                </g>
+
+                <!-- Stage: TRUSTED — your email -->
+                <g class="node node-input">
+                  <text class="diagram-stage" x="290" y="240" text-anchor="middle">Your email</text>
+                  <rect x="160" y="248" width="260" height="58" rx="14"
+                        fill="#f7f7f3" stroke="rgba(10,10,10,0.14)" stroke-width="1.2"/>
+                  <text class="diagram-text" x="290" y="284" text-anchor="middle" fill="rgba(10,10,10,0.9)">youremail@example.com</text>
+                </g>
+
+                <!-- Stage: CHECK — compare against existing records -->
+                <text class="diagram-relation" x="290" y="330" text-anchor="middle">checks against</text>
+                <g class="node node-records">
+                  <text class="diagram-stage" x="290" y="344" text-anchor="middle">Existing data</text>
+                  <rect x="160" y="352" width="260" height="56" rx="14"
+                        fill="#f0f0ea" stroke="rgba(10,10,10,0.14)" stroke-width="1.2"/>
+                  <text class="diagram-text" x="290" y="384" text-anchor="middle" fill="rgba(10,10,10,0.9)">Known Breach Databases</text>
+                </g>
+
+                <!-- Stage: REVEAL — findings (labels pre-existing status) -->
+                <text class="diagram-stage" x="290" y="442" text-anchor="middle">Reveals</text>
+                <g class="node node-safe">
+                  <rect x="120" y="462" width="164" height="64" rx="14" fill="#166534"/>
+                  <circle cx="150" cy="494" r="12" fill="#ecece8"/>
+                  <path d="M145 494 l3.5 3.5 7-8" fill="none" stroke="#166534" stroke-width="2.4"
+                        stroke-linecap="round" stroke-linejoin="round"/>
+                  <text x="170" y="490" text-anchor="start" style="font-family:var(--font);font-size:13px;font-weight:600;fill:#ecece8">Already Safe</text>
+                  <text x="170" y="510" text-anchor="start" style="font-family:var(--font);font-size:11px;font-weight:500;fill:rgba(236,236,232,0.85)">no breach found</text>
+                </g>
+                <g class="node node-exposed">
+                  <rect x="296" y="462" width="164" height="64" rx="14" fill="#c2410c"/>
+                  <circle cx="326" cy="494" r="12" fill="#ecece8"/>
+                  <text x="326" y="499" text-anchor="middle" style="font-family:var(--font);font-size:13px;font-weight:700;fill:#c2410c">!</text>
+                  <text x="346" y="490" text-anchor="start" style="font-family:var(--font);font-size:13px;font-weight:600;fill:#ecece8">Already Exposed</text>
+                  <text x="346" y="510" text-anchor="start" style="font-family:var(--font);font-size:11px;font-weight:500;fill:rgba(236,236,232,0.85)">get protected now</text>
+                </g>
+
+                <!-- Scan dot: checking email against records -->
+                <g class="scan-dot">
+                  <circle r="5" fill="#166534">
+                    <animateMotion dur="1.15s" begin="1.4s" repeatCount="2" fill="freeze"
+                      path="M 290 306 L 290 352"/>
+                  </circle>
+                </g>
+              </svg>
+
+              <p class="diagram-caption">Tirenify protects your email by checking if it&rsquo;s already been exposed — we reveal risk, we never create it.</p>
+            </div>
+          </div>
+
+          <!-- ══════ TECHNICAL DIAGRAM (mobile, vertical) ══════ -->
+          <div class="diagram-wrap diagram-mobile" id="diagram-mobile" role="img"
+               aria-label="Diagram showing how Tirenify checks your email against existing breach records and reveals whether it is safe or exposed">
+            <div class="diagram-inner">
+              <svg class="diagram" viewBox="0 0 360 590" fill="none" aria-hidden="true">
+                <g class="diagram-paths" fill="none" stroke="rgba(10,10,10,0.30)" stroke-width="2">
+                  <path class="dp dp-1" pathLength="1" d="M 180 116 L 180 158"/>
+                  <path class="dp dp-2" pathLength="1" d="M 180 268 L 180 298"/>
+                  <path class="dp dp-3" pathLength="1" d="M 155 246 C 118 320 98 380 108 434"/>
+                  <path class="dp dp-4" pathLength="1" d="M 205 246 C 242 320 262 380 252 434"/>
+                </g>
+
+                <g class="node node-input">
+                  <text class="diagram-stage" x="180" y="36" text-anchor="middle">Your email</text>
+                  <rect x="90" y="48" width="180" height="68" rx="14"
+                        fill="#f7f7f3" stroke="rgba(10,10,10,0.14)" stroke-width="1.2"/>
+                  <text class="diagram-text" x="180" y="90" text-anchor="middle" fill="rgba(10,10,10,0.9)">you@email.com</text>
+                </g>
+
+                <g class="node node-hub">
+                  <circle class="hub-pulse" cx="180" cy="210" r="58" fill="none" stroke="#166534" stroke-width="1.5"/>
+                  <circle class="hub-core" cx="180" cy="210" r="56" fill="#0a0a0a"/>
+                  <text class="diagram-label engine-title" x="180" y="204" text-anchor="middle" fill="#ecece8">TIRENIFY</text>
+                  <text class="diagram-text" x="180" y="222" text-anchor="middle" fill="rgba(236,236,232,0.85)">checks&nbsp;against</text>
+                </g>
+
+                <g class="node node-records">
+                  <text class="diagram-stage" x="180" y="282" text-anchor="middle">Existing data</text>
+                  <rect x="74" y="298" width="212" height="44" rx="12"
+                        fill="#f0f0ea" stroke="rgba(10,10,10,0.14)" stroke-width="1.2"/>
+                  <text class="diagram-text" x="180" y="325" text-anchor="middle" fill="rgba(10,10,10,0.9)">Known breach databases</text>
+                </g>
+
+                <text class="diagram-stage" x="180" y="420" text-anchor="middle">Reveals</text>
+                <g class="node node-safe">
+                  <rect x="40" y="444" width="148" height="58" rx="14" fill="#166534"/>
+                  <circle cx="68" cy="473" r="11" fill="#ecece8"/>
+                  <path d="M63 473 l3.5 3.5 6.5-8" fill="none" stroke="#166534" stroke-width="2.4"
+                        stroke-linecap="round" stroke-linejoin="round"/>
+                  <text class="diagram-text" x="98" y="478" fill="#ecece8">Safe</text>
+                </g>
+                <g class="node node-exposed">
+                  <rect x="200" y="444" width="148" height="58" rx="14" fill="#c2410c"/>
+                  <circle cx="228" cy="473" r="11" fill="#ecece8"/>
+                  <text x="228" y="478" text-anchor="middle" fill="#c2410c" font-size="15" font-weight="700">!</text>
+                  <text class="diagram-text" x="258" y="478" fill="#ecece8">Exposed</text>
+                </g>
+
+                <g class="scan-dot">
+                  <circle r="5" fill="#166534">
+                    <animateMotion dur="1.15s" begin="1.4s" repeatCount="2" fill="freeze"
+                      path="M 180 116 L 180 158"/>
+                  </circle>
+                </g>
+              </svg>
+              <p class="diagram-caption">Tirenify checks your email against known breach databases — it doesn&rsquo;t create risk, it reveals what&rsquo;s already out there.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Features Section -->
-      <section class="section section-features" id="features" aria-label="Platform features">
+      <!-- ══════════ NUMBERED CAPABILITIES ══════════ -->
+      <section class="section section-product" id="product" aria-label="Product capabilities">
         <div class="container">
-          <div class="section-head">
-            <span class="eyebrow">About</span>
-            <h2>Most people never check if their emails are sitting inside public breaches.</h2>
-            <p>Freelancing platforms. Job applications. Crypto wallets. Newsletters. Random signups. Old accounts you forgot about. Most people never check if those emails are sitting inside public breaches. That's what Tirenify is built for — awareness before the damage happens.</p>
+          <div class="section-head" data-reveal>
+            <span class="eyebrow">Capabilities</span>
+            <h2 class="section-title">What Tirenify knows,<br>what it does with it.</h2>
+            <p class="section-intro">Most people never check whether their emails are sitting inside public breaches — old accounts, freelancing platforms, job applications, newsrooms, crypto wallets and random signups. Tirenify surfaces that exposure, and tells you what to do about it.</p>
           </div>
-          <div class="feature-grid">
-            <article class="feature-card" data-reveal>
-              <div class="feature-icon" aria-hidden="true"><i class="fas fa-eye"></i></div>
-              <h3>See which sites exposed your data</h3>
-              <p>Find out exactly which platforms leaked your email — and when it happened.</p>
+          <div class="cap-index">
+            <article class="cap-item" data-reveal>
+              <span class="cap-num" aria-hidden="true">00</span>
+              <div class="cap-body">
+                <div class="cap-title-row">
+                  <h3>Breach Check</h3>
+                  <span class="cap-status is-live">Live</span>
+                </div>
+                <p>Instantly know if your email has been exposed in a known data breach. Your result shows which sites were involved, what data was exposed, and what to change first.</p>
+              </div>
             </article>
-            <article class="feature-card" data-reveal>
-              <div class="feature-icon" aria-hidden="true"><i class="fas fa-fingerprint"></i></div>
-              <h3>Understand what attackers already know</h3>
-              <p>See what types of data are exposed so you know what's at risk and what to protect.</p>
+            <article class="cap-item" data-reveal>
+              <span class="cap-num" aria-hidden="true">01</span>
+              <div class="cap-body">
+                <div class="cap-title-row">
+                  <h3>Real-Time Alerts</h3>
+                  <span class="cap-status is-coming">Coming</span>
+                </div>
+                <p>Get notified the moment new exposure is detected for the accounts you care about — so you act before attackers do, not after.</p>
+              </div>
             </article>
-            <article class="feature-card" data-reveal>
-              <div class="feature-icon" aria-hidden="true"><i class="fas fa-user-shield"></i></div>
-              <h3>Check without giving anything away</h3>
-              <p>No passwords. No account. No tracking. Just your email address and your result.</p>
-            </article>
-            <article class="feature-card" data-reveal>
-              <div class="feature-icon" aria-hidden="true"><i class="fas fa-clipboard-check"></i></div>
-              <h3>Know exactly what to do next</h3>
-              <p>After your result, get clear steps — not generic advice. What to change, where to start.</p>
-            </article>
-            <article class="feature-card" data-reveal>
-              <div class="feature-icon" aria-hidden="true"><i class="fas fa-handshake"></i></div>
-              <h3>Stop guessing about your exposure</h3>
-              <p>Most people assume they're safe. Most people are wrong. Now you can know for certain.</p>
-            </article>
-            <article class="feature-card" data-reveal>
-              <div class="feature-icon" aria-hidden="true"><i class="fas fa-chart-line"></i></div>
-              <h3>Built for African internet users</h3>
-              <p>Designed around the platforms, threats, and realities that affect African users specifically.</p>
+            <article class="cap-item" data-reveal>
+              <span class="cap-num" aria-hidden="true">02</span>
+              <div class="cap-body">
+                <div class="cap-title-row">
+                  <h3>Dark Web Monitoring</h3>
+                  <span class="cap-status is-coming">Coming</span>
+                </div>
+                <p>Continuous surveillance of underground marketplaces and forums for your personal data, alerting you the moment it appears for sale or in use.</p>
+              </div>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- Checker Section -->
-      <section class="section section-checker" id="checker" aria-label="Exposure checker">
+      <!-- ══════════ HOW IT WORKS ══════════ -->
+      <section class="section section-how" id="how" aria-label="How it works">
         <div class="container">
-          <div class="checker-header">
-            <span class="eyebrow">Exposure checker</span>
-            <h2>Find out right now — have you been breached?</h2>
-            <p>One email address. Instant result. No account needed, nothing stored.</p>
+          <div class="section-head" data-reveal>
+            <span class="eyebrow">How it works</span>
+            <h2 class="section-title">A simple, privacy-aware workflow.</h2>
           </div>
-          
-          <!-- Trust signals -->
-          <div class="checker-trust-signals" role="list" aria-label="Checker guarantees">
-            <div class="checker-trust-item" role="listitem">
-              <i class="fas fa-ban" aria-hidden="true"></i>
-              <span>No passwords stored</span>
-            </div>
-            <div class="checker-trust-item" role="listitem">
-              <i class="fas fa-clock" aria-hidden="true"></i>
-              <span>Instant results</span>
-            </div>
-            <div class="checker-trust-item" role="listitem">
-              <i class="fas fa-eye-slash" aria-hidden="true"></i>
-              <span>No tracking</span>
-            </div>
+          <div class="how-steps">
+            <article class="how-step" data-reveal>
+              <span class="how-num" aria-hidden="true">01</span>
+              <h3>Enter your email address</h3>
+              <p>The address you want to check. No login, no password, no account required.</p>
+            </article>
+            <article class="how-step" data-reveal>
+              <span class="how-num" aria-hidden="true">02</span>
+              <h3>Get your result instantly</h3>
+              <p>Breached or safe — you know in seconds, including which sites were involved and what data was exposed.</p>
+            </article>
+            <article class="how-step" data-reveal>
+              <span class="how-num" aria-hidden="true">03</span>
+              <h3>Know what to do next</h3>
+              <p>Clear guidance on what to change, what to watch, and how to protect yourself going forward.</p>
+            </article>
           </div>
+        </div>
+      </section>
 
-          <div class="checker-cta-wrapper">
-            <a class="btn btn-primary btn-xl" href="https://check.tirenify.app/" target="_blank" rel="noopener noreferrer">
-              <i class="fas fa-arrow-right-to-bracket" aria-hidden="true"></i>
-              Check Your Exposure Now
-            </a>
-            <p class="checker-disclaimer">Your email is used only for this check. Nothing is stored, nothing is tracked.</p>
+      <!-- ══════════ WHY TIRENIFY EXISTS (editorial) ══════════ -->
+      <section class="section section-why" id="why" aria-label="Why Tirenify exists">
+        <div class="container why-grid">
+          <div class="why-copy" data-reveal>
+            <span class="eyebrow">Why Tirenify exists</span>
+            <h2 class="section-title">Cybercrime is rising across Africa faster than the tools built for it.</h2>
           </div>
-
-          <!-- Demo result panel -->
-          <div class="checker-demo" aria-label="Sample check result">
-            <div class="checker-surface">
-              <div class="checker-status">
-                <span>Sample result</span>
-                <div class="status-pill status-alert">
-                  <span class="status-dot" aria-hidden="true"></span>
-                  Exposure detected
-                </div>
-              </div>
-              <div class="checker-summary">
-                <p>Recent breach data shows this email appears in multiple publicly disclosed incidents. Review the details and take proactive steps.</p>
-              </div>
-              <div class="checker-details">
-                <div>
-                  <strong>Data types</strong>
-                  <span>Email, password hash, login time</span>
-                </div>
-                <div>
-                  <strong>First seen</strong>
-                  <span>May 2025</span>
-                </div>
-              </div>
+          <div class="why-lede" data-reveal>
+            <p>Online scams, phishing, SIM swaps, credential theft and business email compromise are everyday threats for African internet users. Most global security products are built for broad markets, not for the realities of the region. Tirenify exists to close that gap — first with breach awareness, then with monitoring that keeps users ahead of new threats.</p>
+          </div>
+          <div class="why-stats" data-reveal>
+            <div class="why-stat">
+              <strong class="stat-num">30%+</strong>
+              <span class="stat-label">of reported crime in parts of Africa is cybercrime.</span>
+            </div>
+            <div class="why-stat">
+              <strong class="stat-num stat-num-sm">3&ndash;5</strong>
+              <span class="stat-label">The average person holds 3&ndash;5 email addresses registered across 20&ndash;50 platforms. One breach can expose them all at once.</span>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Why Tirenify Exists -->
-      <section class="section section-purpose" id="purpose" aria-label="Why Tirenify exists">
-        <div class="container purpose-grid">
-          <div class="purpose-copy">
-            <span class="eyebrow">Why Tirenify Exists</span>
-            <h2>Cybercrime is rising across Africa faster than security tools designed for it.</h2>
-            <p>Online scams, phishing, SIM swaps, credential theft, business email compromise, and ransomware are everyday threats for African internet users. Most global security products are built for broad markets, not for the realities of the region. Tirenify exists to close that gap with simple exposure checks and guidance that make sense here.</p>
-          </div>
-          <div class="purpose-stat" data-reveal>
-            <strong>30%+</strong>
-            <span>Cybercrime accounts for more than 30% of reported crime in parts of Africa.</span>
-            <p>As digital adoption grows, security tools have to match African digital reality.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Founder Section -->
+      <!-- ══════════ FOUNDER ══════════ -->
       <section class="section section-founder" id="founder" aria-label="Meet the founder">
         <div class="container founder-grid">
           <div class="founder-media" data-reveal>
-            <img src="me.jpg" alt="Daniel Adeleye, Founder and CEO of Tirenify" loading="lazy" width="960" height="1200" />
+            <img src="founder-avatar.jpg" alt="Daniel Adeleye, Founder and CEO of Tirenify"
+                 loading="lazy" width="160" height="160" />
           </div>
-          <div class="founder-copy">
+          <div class="founder-copy" data-reveal>
             <span class="eyebrow">Behind Tirenify</span>
-            <h2>Daniel Adeleye</h2>
+            <h3 class="founder-name">Daniel Adeleye</h3>
             <p class="founder-title">Founder &amp; CEO</p>
-            <p>Tirenify is founder-led today, but it is being built as a company with a long-term mission. African internet users deserve security tools designed for their reality, not adapted from global defaults.</p>
-            <p>As Tirenify grows, the plan is to bring in engineers, security researchers, and designers who share that focus. The goal is to build something credible, useful, and durable.</p>
+            <p>Tirenify is built as a company with a long-term mission: digital security tools designed for the realities of African internet users, not adapted from global defaults.</p>
           </div>
         </div>
       </section>
 
-      <!-- Trust Section -->
-      <section class="section section-trust" id="trust" aria-label="Why trust matters">
-        <div class="container trust-grid">
-          <div>
-            <span class="eyebrow">Why this matters</span>
-            <h2>The average person has 3-5 email addresses. Each one is registered across 20-50 platforms.</h2>
-            <p>If any one of those platforms gets breached, your data is exposed. Tirenify tells you in seconds.</p>
-          </div>
-          <div class="trust-list">
-            <div class="trust-item" data-reveal>
-              <div class="trust-icon" aria-hidden="true"><i class="fas fa-key" aria-hidden="true"></i></div>
-              <div>
-                <h3>You don't need to give anything sensitive</h3>
-                <p>Just your email. That's all. No credentials, no account, no risk.</p>
-              </div>
-            </div>
-            <div class="trust-item" data-reveal>
-              <div class="trust-icon" aria-hidden="true"><i class="fas fa-database"></i></div>
-              <div>
-                <h3>Your data doesn't stay with us</h3>
-                <p>We run the check and return the result. Nothing about you is stored or tracked.</p>
-              </div>
-            </div>
-            <div class="trust-item" data-reveal>
-              <div class="trust-icon" aria-hidden="true"><i class="fas fa-globe"></i></div>
-              <div>
-                <h3>Results you can trust</h3>
-                <p>Every result comes from verified, publicly disclosed breach records — not guesswork.</p>
-              </div>
-            </div>
-            <div class="trust-item" data-reveal>
-              <div class="trust-icon" aria-hidden="true"><i class="fas fa-file-shield"></i></div>
-              <div>
-                <h3>Clear results, clear next steps</h3>
-                <p>You get a straight answer: breached or not. Then what to do about it.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- How it Works Section -->
-      <section class="section section-how" id="how" aria-label="How it works">
+      <!-- ══════════ CLOSING STATEMENT ══════════ -->
+      <section class="section section-closing" aria-label="Closing statement">
         <div class="container">
-          <div class="section-head">
-            <span class="eyebrow">How it works</span>
-            <h2>A simple, privacy-aware workflow.</h2>
-          </div>
-          <div class="how-grid">
-            <article class="how-step" data-reveal>
-              <span class="step-number" aria-hidden="true">1</span>
-              <h3>Enter your email address</h3>
-              <p>The address you want to check. No login or password needed.</p>
-            </article>
-            <article class="how-step" data-reveal>
-              <span class="step-number" aria-hidden="true">2</span>
-              <h3>Get your result instantly</h3>
-              <p>Breached or safe — you'll know in seconds. See which sites were involved and what data was exposed.</p>
-            </article>
-            <article class="how-step" data-reveal>
-              <span class="step-number" aria-hidden="true">3</span>
-              <h3>Know what to do next</h3>
-              <p>Get clear guidance on what to change, what to watch, and how to protect yourself going forward.</p>
-            </article>
-          </div>
+          <p class="closing-quote" data-reveal>Security shouldn&rsquo;t be a luxury. It should be the default.</p>
         </div>
       </section>
 
-      <!-- Final CTA -->
-      <section class="section final-cta" aria-label="Call to action">
-        <div class="container cta-panel">
-          <div>
-            <span class="eyebrow">Ready to know</span>
-            <h2>You might already be exposed. Find out now.</h2>
-            <p>One email address. Instant result. Free, always. No account needed.</p>
-          </div>
-          <div class="cta-actions">
-            <a class="btn btn-primary" href="https://check.tirenify.app/" target="_blank" rel="noopener noreferrer">Check Your Exposure Now</a>
-            <a class="btn btn-ghost" href="#trust">Learn about privacy</a>
-          </div>
-        </div>
-      </section>
     </main>
 
-    <!-- Footer -->
+    <!-- ══════════ FOOTER ══════════ -->
     <footer class="site-footer" role="contentinfo">
       <div class="container">
         <div class="footer-top">
-          <div class="footer-brand-area">
-            <a class="footer-brand" href="#home">
-              <span class="brand-mark">T</span>
-              <span>Tirenify</span>
-            </a>
-            <p class="footer-tag">Privacy-aware exposure awareness for modern digital lives.</p>
-            <div class="social-row">
-              <a 
-                href="https://x.com/tirenify" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                class="social-link" 
-                aria-label="Tirenify on X (Twitter)"
-              >
-                <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
-              </a>
-            </div>
+          <a class="footer-brand" href="#home" aria-label="Tirenify home">
+            <span class="brand-mark" aria-hidden="true">T</span>
+            <span>Tirenify</span>
+          </a>
+          <div class="footer-desc">
+            <p>Digital security for African internet users.</p>
           </div>
-
-          <nav class="footer-navs" aria-label="Footer navigation">
-            <div class="footer-col">
-              <h4>Product</h4>
-              <a href="#features">Features</a>
-              <a href="#checker">Exposure Checker</a>
-            </div>
-            <div class="footer-col">
-              <h4>Company</h4>
-              <a href="#trust">Trust</a>
-              <a href="#how">How it works</a>
-            </div>
+          <nav class="footer-nav" aria-label="Footer navigation">
+            <a href="#home">Home</a>
+            <a href="#product">Product</a>
+            <a href="#how">How it works</a>
+            <a href="https://x.com/tirenify" target="_blank" rel="noopener noreferrer">Contact</a>
           </nav>
         </div>
-
         <div class="footer-bottom">
-          <p>© 2026 Tirenify. Built for privacy and clear exposure awareness.</p>
+          <p>&copy; 2026 Tirenify. All rights reserved.</p>
+          <p class="footer-credit">Built for the threats here, not adapted from elsewhere.</p>
         </div>
       </div>
     </footer>
+
   </div>
   <script src="script.js"></script>
 </body>

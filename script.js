@@ -1,115 +1,207 @@
-﻿// =====================================================
-// TIRENIFY - Premium Cybersecurity Homepage Scripts
-// =====================================================
+// ============================================================
+// TIRENIFY — Homepage v2
+// Direction A: light, engineered
+// ============================================================
 
-// ─── MOBILE OVERLAY NAVIGATION ───────────────────────
+(function () {
+  'use strict';
 
-const mobileToggle = document.getElementById('mobile-toggle');
-const mobileOverlay = document.getElementById('mobile-overlay');
-const mobileClose = document.getElementById('mobile-close');
-const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-function openMobileNav() {
-  mobileOverlay.style.display = 'flex';
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      mobileOverlay.classList.add('is-open');
-    });
-  });
-  mobileOverlay.setAttribute('aria-hidden', 'false');
-  mobileToggle.setAttribute('aria-expanded', 'true');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeMobileNav() {
-  mobileOverlay.classList.remove('is-open');
-  mobileOverlay.setAttribute('aria-hidden', 'true');
-  mobileToggle.setAttribute('aria-expanded', 'false');
-  document.body.style.overflow = '';
-  setTimeout(() => {
-    if (!mobileOverlay.classList.contains('is-open')) {
-      mobileOverlay.style.display = 'none';
+  /* ─── WORDMARK ENTRANCE ─────────────────────────────── */
+  function splitWordmark() {
+    var el = document.querySelector('.wordmark[data-split]');
+    if (!el) return;
+    var text = el.getAttribute('data-split') || el.textContent;
+    el.textContent = '';
+    var frag = document.createDocumentFragment();
+    var i, letter;
+    for (i = 0; i < text.length; i++) {
+      letter = document.createElement('span');
+      letter.className = 'letter';
+      letter.style.setProperty('--i', String(i));
+      if (text[i] === ' ') {
+        letter.innerHTML = '&nbsp;';
+      } else {
+        letter.textContent = text[i];
+      }
+      frag.appendChild(letter);
     }
-  }, 300);
-}
+    el.appendChild(frag);
+  }
+  splitWordmark();
 
-if (mobileToggle && mobileOverlay) {
-  mobileOverlay.style.display = 'none';
-
-  mobileToggle.addEventListener('click', openMobileNav);
-
-  if (mobileClose) {
-    mobileClose.addEventListener('click', closeMobileNav);
+  var started = false;
+  function startEntrance() {
+    if (started) return;
+    started = true;
+    document.body.classList.add('started');
+    // Trigger diagram draw after wordmark settles
+    window.setTimeout(activateDiagram, reduceMotion ? 200 : 1450);
   }
 
-  mobileNavLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      closeMobileNav();
+  /* ─── TECHNICAL DIAGRAM ─────────────────────────────── */
+  function activateDiagram() {
+    var dg = document.getElementById('diagram');
+    var dm = document.getElementById('diagram-mobile');
+    if (dg) dg.classList.add('live');
+    if (dm) dm.classList.add('live');
+  }
+
+  /* ─── SCROLL REVEAL ─────────────────────────────────── */
+  function setupReveal() {
+    var items = document.querySelectorAll('[data-reveal]');
+    if (!items.length) return;
+
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      items.forEach(function (el) { el.classList.add('revealed'); });
+      return;
+    }
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        var group = Array.prototype.indexOf.call(el.parentNode.children, el);
+        el.style.transitionDelay = Math.min(group, 4) * 80 + 'ms';
+        el.classList.add('revealed');
+        io.unobserve(el);
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    items.forEach(function (el) { io.observe(el); });
+  }
+
+  /* ─── HEADER SCROLL STATE ───────────────────────────── */
+  function setupHeader() {
+    var header = document.querySelector('.site-header');
+    if (!header) return;
+    var onScroll = function () {
+      header.classList.toggle('scrolled', window.scrollY > 40);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  /* ─── MOBILE NAV (hamburger full-screen overlay) ────────── */
+  function setupMobileNav() {
+    var toggle = document.getElementById('mobile-toggle');
+    var overlay = document.getElementById('mobile-overlay');
+    if (!toggle || !overlay) return;
+
+    var lastFocus = null;
+
+    function openNav() {
+      lastFocus = document.activeElement;
+      overlay.classList.add('is-open');
+      toggle.classList.add('active');
+      document.body.classList.add('nav-open');
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.setAttribute('aria-label', 'Close menu');
+      overlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      // Move focus to first link for keyboard users
+      var first = overlay.querySelector('a');
+      if (first) first.focus();
+    }
+
+    function closeNav() {
+      overlay.classList.remove('is-open');
+      toggle.classList.remove('active');
+      document.body.classList.remove('nav-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open menu');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+
+    toggle.addEventListener('click', function () {
+      overlay.classList.contains('is-open') ? closeNav() : openNav();
     });
-  });
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mobileOverlay.classList.contains('is-open')) {
-      closeMobileNav();
-    }
-  });
+    // Close when tapping the dark overlay background
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closeNav();
+    });
 
-  mobileOverlay.addEventListener('click', (e) => {
-    if (e.target === mobileOverlay) {
-      closeMobileNav();
-    }
-  });
-}
+    overlay.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        // Scroll after a tick so the overlay hides first
+        window.setTimeout(closeNav, 10);
+      });
+    });
 
-// Header scroll state for frosted glass effect
-const headerEl = document.querySelector('.site-header');
-if (headerEl) {
-  let lastScrollY = 0;
-  const scrollThreshold = 60;
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeNav();
+    });
 
-  window.addEventListener('scroll', () => {
-    const currentScrollY = window.scrollY;
-    
-    // Add/remove scrolled class based on scroll position
-    headerEl.classList.toggle('scrolled', currentScrollY > scrollThreshold);
-    
-    lastScrollY = currentScrollY;
-  }, { passive: true });
-}
-
-// Scroll reveal animation using IntersectionObserver
-(function setupReveal() {
-  const revealElements = document.querySelectorAll('[data-reveal]');
-  
-  if (revealElements.length === 0) return;
-
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('revealed');
-        revealObserver.unobserve(entry.target);
+    // Trap focus within the overlay while open
+    document.addEventListener('keydown', function (e) {
+      if (!overlay.classList.contains('is-open')) return;
+      if (e.key !== 'Tab') return;
+      var focusables = overlay.querySelectorAll('a');
+      if (!focusables.length) return;
+      var firstEl = focusables[0];
+      var lastEl = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === firstEl) {
+        e.preventDefault();
+        lastEl.focus();
+      } else if (!e.shiftKey && document.activeElement === lastEl) {
+        e.preventDefault();
+        firstEl.focus();
       }
     });
-  }, { threshold: 0.15 });
 
-  revealElements.forEach(element => revealObserver.observe(element));
-
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const href = this.getAttribute('href');
-      if (href === '#') return;
-      
-      e.preventDefault();
-      const target = document.querySelector(href);
-      if (target) {
-        const headerHeight = document.querySelector('.site-header')?.offsetHeight || 68;
-        const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight - 20;
-        
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
+    // Restore scroll if viewport orientation changes while open
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 1024 && overlay.classList.contains('is-open')) {
+        closeNav();
       }
     });
-  });
+  }
+
+  /* ─── SMOOTH ANCHOR SCROLL ──────────────────────────── */
+  function setupAnchors() {
+    var header = document.querySelector('.site-header');
+    var offset = (header ? header.offsetHeight : 76) + 8;
+
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var href = this.getAttribute('href');
+        if (!href || href === '#') return;
+        var target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        var top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: top, behavior: reduceMotion ? 'auto' : 'smooth' });
+      });
+    });
+  }
+
+  /* ─── INIT ──────────────────────────────────────────── */
+  function init() {
+    setupHeader();
+    setupMobileNav();
+    setupAnchors();
+    setupReveal();
+
+    if (window.performance && window.performance.timing) {
+      // Entrance staged after first paint
+      if (reduceMotion) {
+        activateDiagram();
+        window.requestAnimationFrame(function () { document.body.classList.add('started'); });
+      } else {
+        window.requestAnimationFrame(startEntrance);
+      }
+    } else {
+      startEntrance();
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
