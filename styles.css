@@ -370,7 +370,9 @@ body.nav-open .brand-mark { background: var(--bg); color: var(--bg-deep); }
 }
 .diagram-inner {
   width: 100%;
-  max-width: 100%;
+  /* Single scaling unit: never stretches sparse on large screens, shrinks fluidly below */
+  max-width: min(100%, 560px);
+  margin-inline: auto;
   position: relative;
   overflow: hidden;
 }
@@ -387,8 +389,12 @@ body.nav-open .brand-mark { background: var(--bg); color: var(--bg-deep); }
 /* Text within diagram */
 .diagram-text { font-family: var(--font); font-size: 15px; font-weight: 600; letter-spacing: -0.01em; }
 .diagram-mobile .diagram-text { font-size: 14px; }
-.diagram-mobile .engine-title { font-size: 12px; }
+.diagram-mobile .engine-title { font-size: 14px; }
 .diagram-mobile .node-hub .diagram-text { font-size: 12px; }
+/* Slightly larger mobile user-units so labels stay legible when the SVG
+   scales down to ~0.75x on 320–430px screens */
+.diagram-mobile .diagram-stage { font-size: 13px; }
+.diagram-mobile .diagram-or { font-size: 12px; }
 .diagram-stage {
   font-family: var(--font-mono);
   font-size: 11px;
@@ -398,6 +404,8 @@ body.nav-open .brand-mark { background: var(--bg); color: var(--bg-deep); }
   fill: var(--text-3);
 }
 .engine-title { font-family: var(--font); font-size: 13px; font-weight: 700; letter-spacing: 0.06em; }
+/* "OR" connector between the two outcome badges — subtle, muted */
+.diagram-or { letter-spacing: 0.14em; fill: var(--text-3); }
 .diagram-subnode {
   font-family: var(--font);
   font-size: 12px;
@@ -434,8 +442,8 @@ body.nav-open .brand-mark { background: var(--bg); color: var(--bg-deep); }
 .hub-pulse {
   opacity: 0;
 }
-.diagram-desktop .hub-pulse { transform-origin: 350px 240px; }
-.diagram-mobile .hub-pulse { transform-origin: 180px 210px; }
+.diagram-desktop .hub-pulse { transform-origin: 290px 118px; }
+.diagram-mobile .hub-pulse { transform-origin: 180px 106px; }
 .live .hub-pulse {
   opacity: 1;
   animation: hubPulse 2.6s ease-out infinite;
@@ -450,6 +458,23 @@ body.nav-open .brand-mark { background: var(--bg); color: var(--bg-deep); }
 @media (prefers-reduced-motion: reduce) {
   .scan-dot circle { animation: none; }
   .hub-pulse { display: none; }
+  .radar-sweep { animation: none !important; }
+}
+
+/* Radar sweep — the shield actively checks the email in place */
+.radar-sweep {
+  opacity: 0;
+  transform-origin: center;
+  transition: opacity 0.5s var(--ease);
+}
+.live .radar-sweep {
+  opacity: 1;
+  animation: radarSweep 3.4s linear infinite;
+}
+.diagram-desktop .radar-sweep { transform-origin: 290px 118px; }
+.diagram-mobile .radar-sweep { transform-origin: 180px 106px; }
+@keyframes radarSweep {
+  to { transform: rotate(360deg); }
 }
 
 /* ===== GENERAL SECTIONS ===== */
@@ -605,25 +630,48 @@ body.nav-open .brand-mark { background: var(--bg); color: var(--bg-deep); }
 }
 
 /* ===== FOUNDER ===== */
+/* Intentionally hidden — team content kept in codebase for future re-enable */
+.section-hidden { display: none !important; visibility: hidden !important; }
 .section-founder { border-top: 1px solid var(--border-soft); }
+.team-head { margin-bottom: clamp(2rem, 4vw, 3rem); }
 .founder-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  align-items: start;
+}
+.founder-card {
   display: flex;
-  align-items: center;
-  gap: clamp(1.5rem, 3vw, 2.5rem);
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1.25rem;
+  min-width: 0;
 }
 .founder-media img {
-  width: 144px;
-  height: 144px;
+  width: 100%;
+  aspect-ratio: 1;
   object-fit: cover;
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   filter: saturate(0.92) contrast(1.02);
 }
+.founder-avatar-placeholder {
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 600;
+  line-height: 1;
+}
 .founder-copy { max-width: 34em; }
-.founder-copy .eyebrow { margin-bottom: 1rem; }
 .founder-name {
-  font-size: clamp(26px, 3vw, 38px);
+  font-size: clamp(20px, 2vw, 26px);
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.1;
@@ -637,8 +685,8 @@ body.nav-open .brand-mark { background: var(--bg); color: var(--bg-deep); }
   margin: 0.35rem 0 1rem;
 }
 .founder-copy > p:last-child {
-  font-size: 17px;
-  line-height: 1.7;
+  font-size: 15px;
+  line-height: 1.6;
   color: var(--text-2);
 }
 
@@ -713,14 +761,14 @@ body.nav-open .brand-mark { background: var(--bg); color: var(--bg-deep); }
   /* Swap to vertical mobile diagram when layout stacks */
   .diagram-desktop { display: none; }
   .diagram-mobile { display: flex; }
-  .diagram-inner { max-width: 420px; }
+  .diagram-inner { max-width: min(100%, 430px); }
 
   .why-grid { grid-template-columns: 1fr; gap: 2rem; }
 }
 
 /* Tablet small */
 @media (max-width: 720px) {
-  .founder-media img { width: 112px; height: 112px; }
+  .founder-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .trust-pill { display: none; }
 }
 
@@ -731,7 +779,7 @@ body.nav-open .brand-mark { background: var(--bg); color: var(--bg-deep); }
   .hero-title { font-size: clamp(36px, 11vw, 48px); }
   .hero-support { font-size: 17px; }
   .hero-meta { font-size: 11px; }
-  .diagram-inner { max-width: 100%; }
+  .diagram-inner { max-width: min(100%, 430px); }
 
   .section { padding: clamp(3rem, 11vw, 4.5rem) 0; }
   .section-closing { padding: clamp(4rem, 14vw, 6rem) 0; }
@@ -742,6 +790,7 @@ body.nav-open .brand-mark { background: var(--bg); color: var(--bg-deep); }
 
   .how-steps { grid-template-columns: 1fr; gap: 2rem; }
   .why-stats { grid-template-columns: 1fr; }
+  .founder-grid { grid-template-columns: 1fr; }
 
   .footer-top, .footer-bottom { flex-direction: column; align-items: flex-start; }
 }
@@ -782,7 +831,8 @@ body.nav-open .brand-mark { background: var(--bg); color: var(--bg-deep); }
 /* Diagram plain-language caption */
 .diagram-caption {
   margin-top: 1rem;
-  font-size: 15px;
+  /* Scales gracefully with the diagram, never below readable size */
+  font-size: clamp(13px, 1.8vw, 15px);
   line-height: 1.6;
   color: var(--text-2);
   max-width: 100%;
