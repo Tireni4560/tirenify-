@@ -350,6 +350,10 @@ body.nav-open .brand-mark { background: var(--bg); color: var(--bg-deep); }
 }
 .meta-sep { opacity: 0.6; }
 
+/* Proof strip — reuses hero-meta pattern; sits inside its own section so
+   the hero's bottom margin doesn't double up on the section padding */
+.proof-strip .hero-meta { margin-top: 0; }
+
 /* ===== WORDMARK ENTRANCE ===== */
 .wordmark .letter {
   display: inline-block;
@@ -488,6 +492,8 @@ body.nav-open .brand-mark { background: var(--bg); color: var(--bg-deep); }
   letter-spacing: -0.02em;
 }
 .section-head { max-width: 38em; margin-bottom: clamp(3rem, 6vw, 5rem); }
+/* Head-only sections (no content grid beneath) don't need the head's bottom margin */
+.section-problem .section-head { margin-bottom: 0; }
 .section-head .eyebrow { margin-bottom: 1.4rem; }
 .section-intro {
   margin-top: 1.4rem;
@@ -552,6 +558,16 @@ body.nav-open .brand-mark { background: var(--bg); color: var(--bg-deep); }
   font-weight: 600;
   color: var(--text-3);
   line-height: 1;
+}
+
+.cap-phase {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  padding-top: 0.4rem;
 }
 
 .cap-body { max-width: 36em; }
@@ -690,10 +706,12 @@ body.nav-open .brand-mark { background: var(--bg); color: var(--bg-deep); }
   color: var(--text-2);
 }
 
-/* ===== CLOSING STATEMENT ===== */
+/* ===== FINAL CTA ===== */
+/* Padding brought in line with the .section rhythm — the oversized
+   statement padding was sized for the former large closing quote */
 .section-closing {
   border-top: 1px solid var(--border-soft);
-  padding: clamp(7rem, 14vw, 11rem) 0;
+  padding: clamp(5rem, 10vw, 8.5rem) 0;
   text-align: center;
 }
 .closing-quote {
@@ -704,6 +722,12 @@ body.nav-open .brand-mark { background: var(--bg); color: var(--bg-deep); }
   max-width: 22em;
   margin: 0 auto;
 }
+.closing-cta {
+  margin-top: 0;
+  font-size: 18px;
+  color: var(--text-2);
+}
+.section-closing .btn { margin-top: 1.8rem; }
 
 /* ===== FOOTER ===== */
 .site-footer {
@@ -782,7 +806,7 @@ body.nav-open .brand-mark { background: var(--bg); color: var(--bg-deep); }
   .diagram-inner { max-width: min(100%, 430px); }
 
   .section { padding: clamp(3rem, 11vw, 4.5rem) 0; }
-  .section-closing { padding: clamp(4rem, 14vw, 6rem) 0; }
+  .section-closing { padding: clamp(3rem, 11vw, 4.5rem) 0; }
 
   .cap-item { grid-template-columns: 1fr; gap: 0.9rem; }
   .cap-num { font-size: 24px; }
@@ -793,6 +817,8 @@ body.nav-open .brand-mark { background: var(--bg); color: var(--bg-deep); }
   .founder-grid { grid-template-columns: 1fr; }
 
   .footer-top, .footer-bottom { flex-direction: column; align-items: flex-start; }
+  /* Comfortable tap targets for footer links on touch screens */
+  .footer-nav a { padding: 12px 16px 12px 0; min-height: 44px; display: inline-flex; align-items: center; }
 }
 
 /* Small phones (320px) */
@@ -832,7 +858,7 @@ body.nav-open .brand-mark { background: var(--bg); color: var(--bg-deep); }
 .diagram-caption {
   margin-top: 1rem;
   /* Scales gracefully with the diagram, never below readable size */
-  font-size: clamp(13px, 1.8vw, 15px);
+  font-size: clamp(14px, 1.8vw, 15px);
   line-height: 1.6;
   color: var(--text-2);
   max-width: 100%;
