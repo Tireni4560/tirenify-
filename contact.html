@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Tirenify</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="description" content="Contact Tirenify: questions, feedback, a wrong result, or a partnership idea. Email support@tirenify.app or send us a message." />
+  <meta name="author" content="Daniel Adeleye" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#ecece8" />
+  <link rel="canonical" href="https://tirenify.app/contact" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tirenify.app/contact" />
+  <meta property="og:site_name" content="Tirenify" />
+  <meta property="og:title" content="Contact | Tirenify" />
+  <meta property="og:description" content="Contact Tirenify: questions, feedback, a wrong result, or a partnership idea. Email support@tirenify.app or send us a message." />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:image" content="https://tirenify.app/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Tirenify — Know if your data has been breached before attackers use it" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@tirenify" />
+  <meta name="twitter:creator" content="@tirenify" />
+  <meta name="twitter:url" content="https://tirenify.app/contact" />
+  <meta name="twitter:title" content="Contact | Tirenify" />
+  <meta name="twitter:description" content="Contact Tirenify: questions, feedback, a wrong result, or a partnership idea. Email support@tirenify.app or send us a message." />
+  <meta name="twitter:image" content="https://tirenify.app/og-image.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="page-shell">
+
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="Tirenify home">
+          <span class="brand-mark" aria-hidden="true">T</span>
+          <span class="brand-name">Tirenify</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="how-it-works.html">How it works</a>
+          <a href="about.html">About</a>
+          <a class="btn btn-primary btn-nav" href="https://check.tirenify.app/">Check My Email</a>
+        </nav>
+
+        <button class="mobile-toggle" id="mobile-toggle" aria-expanded="false" aria-controls="mobile-overlay" aria-label="Open menu">
+          <span class="hamburger-line line-1"></span>
+          <span class="hamburger-line line-2"></span>
+          <span class="hamburger-line line-3"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-overlay" id="mobile-overlay" aria-hidden="true">
+      <div class="mobile-overlay-inner">
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+          <a href="index.html" class="mobile-nav-link">Home</a>
+          <a href="products.html" class="mobile-nav-link">Products</a>
+          <a href="how-it-works.html" class="mobile-nav-link">How it works</a>
+          <a href="about.html" class="mobile-nav-link">About</a>
+          <a href="contact.html" class="mobile-nav-link" aria-current="page">Contact</a>
+          <a class="mobile-cta" href="https://check.tirenify.app/">Check My Email</a>
+        </nav>
+      </div>
+    </div>
+
+    <main class="page-main" id="main" role="main">
+
+      <section class="page-hero">
+        <div class="container">
+          <span class="eyebrow">Contact</span>
+          <h1 class="page-title">Talk to us.</h1>
+          <p class="page-sub">Questions, feedback, a wrong result, or a partnership idea. We read everything.</p>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <div class="container">
+          <div class="contact-grid">
+
+            <div>
+              <form class="form" data-form="contact" novalidate data-min-seconds="3"
+                    data-success-message="Thanks. We&rsquo;ve got your message and will reply as soon as we can."
+                    data-error-message="Sorry &mdash; that didn&rsquo;t send. Please email support@tirenify.app and we&rsquo;ll pick it up from there.">
+                <div class="form-grid">
+
+                  <div class="form-field">
+                    <label class="form-label" for="contact-name">Name <span class="req" aria-hidden="true">*</span></label>
+                    <input class="form-control" id="contact-name" name="name" type="text"
+                           autocomplete="name" required
+                           data-validate="required"
+                           data-required-message="Tell us what to call you." />
+                    <p class="field-error"></p>
+                  </div>
+
+                  <div class="form-field">
+                    <label class="form-label" for="contact-email">Email <span class="req" aria-hidden="true">*</span></label>
+                    <input class="form-control" id="contact-email" name="email" type="email" inputmode="email"
+                           autocomplete="email" placeholder="you@example.com" required
+                           data-validate="required email"
+                           data-required-message="We need an address to reply to." />
+                    <p class="field-error"></p>
+                  </div>
+
+                  <div class="form-field">
+                    <label class="form-label" for="contact-topic">Topic <span class="req" aria-hidden="true">*</span></label>
+                    <select class="form-control" id="contact-topic" name="topic" required
+                            data-validate="required"
+                            data-required-message="Choose a topic.">
+                      <option value="">Choose one</option>
+                      <option value="Support">Support</option>
+                      <option value="Report an issue">Report an issue</option>
+                      <option value="Partnership">Partnership</option>
+                      <option value="Enterprise">Enterprise</option>
+                      <option value="Press">Press</option>
+                      <option value="Security report">Security report</option>
+                    </select>
+                    <p class="field-error"></p>
+                  </div>
+
+                  <div class="form-field">
+                    <label class="form-label" for="contact-message">Message <span class="req" aria-hidden="true">*</span></label>
+                    <textarea class="form-control" id="contact-message" name="message" rows="6" required
+                              data-validate="required"
+                              data-required-message="Add a short message so we know how to help."></textarea>
+                    <p class="field-error"></p>
+                  </div>
+
+                  <!-- Honeypot: hidden from people, ignored by the script when empty -->
+                  <div class="form-field form-hp" aria-hidden="true">
+                    <label class="form-label" for="contact-company">Company</label>
+                    <input class="form-control" id="contact-company" name="company" type="text"
+                           tabindex="-1" autocomplete="off" data-honeypot />
+                  </div>
+
+                </div>
+
+                <div class="form-submit">
+                  <button class="btn btn-primary" type="submit">Send</button>
+                </div>
+              </form>
+
+              <p class="form-message" data-form-message role="status" aria-live="polite"></p>
+            </div>
+
+            <aside class="contact-card" aria-label="Other ways to reach us">
+              <ul class="contact-list">
+                <li>
+                  <span class="contact-label">Support</span>
+                  <a href="mailto:support@tirenify.app">support@tirenify.app</a>
+                </li>
+                <li>
+                  <span class="contact-label">Security reports</span>
+                  <a href="mailto:security@tirenify.app">security@tirenify.app</a>
+                  <p>For vulnerabilities.</p>
+                </li>
+                <li>
+                  <span class="contact-label">X</span>
+                  <a href="https://x.com/tirenify" target="_blank" rel="noopener noreferrer">@tirenify</a>
+                </li>
+              </ul>
+            </aside>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-top">
+          <a class="footer-brand" href="index.html" aria-label="Tirenify home">
+            <span class="brand-mark" aria-hidden="true">T</span>
+            <span>Tirenify</span>
+          </a>
+          <div class="footer-desc">
+            <p>Tirenify builds security tools for African internet users.</p>
+          </div>
+        </div>
+
+        <nav class="footer-columns" aria-label="Footer navigation">
+          <div class="footer-col">
+            <h2 class="footer-col-title">Products</h2>
+            <ul>
+              <li><a href="breach-guard.html">Breach Guard</a></li>
+              <li><a href="products.html">All products</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h2 class="footer-col-title">Company</h2>
+            <ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h2 class="footer-col-title">Resources</h2>
+            <ul>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="how-it-works.html">How it works</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h2 class="footer-col-title">Trust</h2>
+            <ul>
+              <li><a href="security-privacy.html">Security &amp; Privacy</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h2 class="footer-col-title">Social</h2>
+            <ul>
+              <li>
+                <a class="social-link" href="https://x.com/tirenify" target="_blank" rel="noopener noreferrer" aria-label="Tirenify on X (@tirenify)">
+                  <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 Tirenify. All rights reserved.</p>
+          <p class="footer-credit">Built for the threats here, not adapted from elsewhere.</p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <script src="site-config.js"></script>
+  <script src="faq-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

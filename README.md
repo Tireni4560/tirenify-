@@ -17,10 +17,54 @@ This repository contains the frontend homepage experience for the Tirenify platf
 
 ## Project Structure
 
-- `index.html` — Main homepage structure and content
-- `styles.css` — Styling, layout system, responsiveness, animations, and visual design
-- `script.js` — Navigation handling, interactivity, and frontend functionality
-- `favicon.svg` — Brand favicon asset
+- `index.html` — homepage structure and content
+- `styles.css` — styling, layout system, responsiveness, animations, visual design
+- `script.js` — navigation, FAQ rendering, form handling, interactivity
+- `site-config.js` — the two owner-set values (`FORM_ENDPOINT`, `BREACH_DATA_SOURCE_NOTE`)
+- `faq-data.js` — FAQ questions and answers (single source of truth)
+- `products.html`, `breach-guard.html`, `how-it-works.html`, `security-privacy.html`,
+  `about.html`, `faq.html`, `contact.html` — one flat page per route (works when the folder is
+  previewed locally and when deployed)
+- `404.html` — friendly not-found page
+- `robots.txt`, `sitemap.xml`, `.well-known/security.txt` — SEO and security contact files
+- `_redirects` — clean-slug rewrites (`/products` → `products.html`) for hosts that support them
+- `favicon.svg`, `og-image.jpg`, `me.jpg` — brand assets
+- The X (formerly Twitter) icon in the footer and About button is loaded from the Font Awesome 6 CDN
+  (cdnjs); no local icon image or SVG is used for it
+
+## Pages
+
+Home (`/`), Products (`/products`), Breach Guard (`/breach-guard`), How it works (`/how-it-works`),
+Security & Privacy (`/security-privacy`), About (`/about`), FAQ (`/faq`), Contact (`/contact`).
+The homepage keeps its section ids `#home`, `#product`, `#how`, `#why`.
+
+## Owner configuration
+
+Both values live in `site-config.js`:
+
+- `FORM_ENDPOINT` — where the /contact and /products forms POST their JSON. Left empty: the forms
+  still validate and show success/error states, and tell people to email support@tirenify.app
+  instead of failing silently. Point it at a form handler when one exists.
+- `BREACH_DATA_SOURCE_NOTE` — optional attribution line rendered on /how-it-works under
+  "Where the data comes from". Left empty on purpose: no data provider is confirmed yet, and some
+  providers require visible attribution with a link.
+
+Adding an FAQ item is a single object in `faq-data.js`; items flagged `short: true` also appear on
+the homepage.
+
+## Local Preview
+
+To run locally:
+
+1. Clone the repository
+2. Open the project folder
+3. Launch `index.html` in a browser
+
+Or use a lightweight local server such as:
+
+```bash
+npx serve
+```
 
 ---
 
@@ -94,20 +138,5 @@ The goal of this homepage is to serve as the official public-facing entry point 
 Lead design and development by Daniel Tirenioluwa Adeleye. Tirenify is an independent initiative focused on privacy-first exposure awareness helping people discover whether personal data appears in publicly disclosed breach records while prioritizing transparency and practical guidance.
 
 © 2026 Tirenify. All rights reserved.
-
----
-
-## Local Preview
-
-To run locally:
-
-1. Clone the repository
-2. Open the project folder
-3. Launch `index.html` in a browser
-
-Or use a lightweight local server such as:
-
-```bash
-npx serve
 
 

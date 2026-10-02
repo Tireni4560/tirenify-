@@ -15,7 +15,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tirenify | Built for African Internet Users</title>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <meta name="description" content="Tirenify builds security tools for African internet users, starting with breach detection and expanding toward monitoring, identity protection, and account security. Check if your email appears in known data breaches — free, instant." />
   <meta name="author" content="Daniel Adeleye" />
   <meta name="robots" content="index, follow" />
@@ -50,26 +50,27 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
   <div class="page-shell">
 
     <!-- Navigation -->
     <header class="site-header" role="banner">
       <div class="container header-inner">
-        <a class="brand" href="#home" aria-label="Tirenify home">
+        <a class="brand" href="index.html" aria-label="Tirenify home">
           <span class="brand-mark" aria-hidden="true">T</span>
           <span class="brand-name wordmark" data-split="Tirenify" aria-label="Tirenify"></span>
-          <span class="trust-pill">78+ emails checked</span>
         </a>
 
         <nav class="site-nav" aria-label="Primary navigation">
-          <a href="#home">Home</a>
-          <a href="#product">Product</a>
-          <a href="#how">How it works</a>
-          <a href="#why">Why it exists</a>
-          <a class="btn btn-primary btn-nav" href="https://check.tirenify.app/" target="_blank" rel="noopener noreferrer">Check My Email</a>
+          <a href="index.html" aria-current="page">Home</a>
+          <a href="products.html">Products</a>
+          <a href="how-it-works.html">How it works</a>
+          <a href="about.html">About</a>
+          <a class="btn btn-primary btn-nav" href="https://check.tirenify.app/">Check My Email</a>
         </nav>
 
         <button class="mobile-toggle" id="mobile-toggle" aria-expanded="false" aria-controls="mobile-overlay" aria-label="Open menu">
@@ -84,16 +85,17 @@
     <div class="mobile-overlay" id="mobile-overlay" aria-hidden="true">
       <div class="mobile-overlay-inner">
         <nav class="mobile-nav" aria-label="Mobile navigation">
-          <a href="#home" class="mobile-nav-link">Home</a>
-          <a href="#product" class="mobile-nav-link">Product</a>
-          <a href="#how" class="mobile-nav-link">How it works</a>
-          <a href="#why" class="mobile-nav-link">Why it exists</a>
-          <a class="mobile-cta" href="https://check.tirenify.app/" target="_blank" rel="noopener noreferrer">Check My Email</a>
+          <a href="index.html" class="mobile-nav-link" aria-current="page">Home</a>
+          <a href="products.html" class="mobile-nav-link">Products</a>
+          <a href="how-it-works.html" class="mobile-nav-link">How it works</a>
+          <a href="about.html" class="mobile-nav-link">About</a>
+          <a href="contact.html" class="mobile-nav-link">Contact</a>
+          <a class="mobile-cta" href="https://check.tirenify.app/">Check My Email</a>
         </nav>
       </div>
     </div>
 
-    <main role="main">
+    <main id="main" role="main">
 
       <!-- ══════════ HERO ══════════ -->
       <section class="hero" id="home" aria-label="Introduction">
@@ -103,7 +105,7 @@
             <h1 class="hero-title">Security that<br>sees first.</h1>
             <p class="hero-support">Tirenify helps you discover and act on digital security risks before they become expensive problems. Breach Guard is our first product. Check whether your email appears in known data breaches and get clear next steps in seconds.</p>
             <div class="hero-actions">
-              <a class="btn btn-primary btn-lg" href="https://check.tirenify.app/" target="_blank" rel="noopener noreferrer">
+              <a class="btn btn-primary btn-lg" href="https://check.tirenify.app/" data-checker-link>
                 Check My Email
                 <span class="btn-arrow" aria-hidden="true">&rarr;</span>
               </a>
@@ -113,6 +115,7 @@
               <span class="meta-sep" aria-hidden="true">/</span>
               <span>No signup required</span>
             </div>
+            <p class="trust-note">We don&rsquo;t ask for a password. We don&rsquo;t store the email you check.</p>
           </div>
 <!-- ══════ TECHNICAL DIAGRAM (desktop, landscape) ══════
      Concept: the email never travels. Tirenify's shield hovers above,
@@ -181,8 +184,6 @@
                   </circle>
                 </g>
               </svg>
-
-              <p class="diagram-caption">This is Phase 1: Breach Guard. Tirenify protects your email by checking if it&rsquo;s already been exposed — we reveal risk, we never create it.</p>
             </div>
           </div>
 
@@ -249,9 +250,12 @@
                   </circle>
                 </g>
               </svg>
-              <p class="diagram-caption">This is Phase 1: Breach Guard. Tirenify protects your email by checking if it&rsquo;s already been exposed — we reveal risk, we never create it.</p>
             </div>
           </div>
+
+          <!-- Single shared caption: one copy in the DOM, rendered once per viewport
+               (the desktop and mobile diagrams are mutually exclusive via CSS) -->
+          <p class="diagram-caption">This is Phase 1: Breach Guard. Tirenify protects your email by checking if it&rsquo;s already been exposed — we reveal risk, we never create it.</p>
         </div>
       </section>
 
@@ -259,10 +263,10 @@
       <section class="section proof-strip" aria-label="Trust indicators">
         <div class="container">
           <div class="hero-meta" data-reveal>
-            <span>78+ people checked their exposure</span>
-            <span class="meta-sep" aria-hidden="true">/</span>
             <span>Results in seconds</span>
-            <span class="meta-sep" aria-hidden="true">/</span>
+            <span class="meta-sep" aria-hidden="true">&middot;</span>
+            <span>No account needed</span>
+            <span class="meta-sep" aria-hidden="true">&middot;</span>
             <span>Built from Nigeria for African users</span>
           </div>
         </div>
@@ -285,7 +289,7 @@
           <div class="section-head" data-reveal>
             <span class="eyebrow">Our First Product</span>
             <h2 class="section-title">One product.<br>Four phases. Here's where we are.</h2>
-            <p class="section-intro">Most people never check whether their emails are sitting inside public breaches — old accounts, freelancing platforms, job applications, newsrooms, crypto wallets and random signups. This is where Tirenify's first product starts: Phase 1 surfaces that exposure and tells you what to do about it. Phases 2 through 4 expand into monitoring, full account protection, and enterprise-grade security.</p>
+            <p class="section-intro">Breach Guard is Phase 1 and it&rsquo;s live. The later phases are planned expansions into monitoring, account protection and tools for organisations.</p>
           </div>
           <div class="cap-index">
             <article class="cap-item" data-reveal>
@@ -294,7 +298,10 @@
                 <div class="cap-title-row">
                   <span class="cap-phase" aria-hidden="true">Phase 1</span>
                   <h3>Breach Guard</h3>
-                  <span class="cap-status is-live">Live Now</span>
+                  <span class="cap-status is-live">
+                    <svg class="status-icon" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm3.6 6.1-4.2 4.6a.9.9 0 0 1-1.3 0L4.4 8.9a.9.9 0 0 1 1.3-1.2l1 1.1 3.5-3.9a.9.9 0 0 1 1.4 1.2Z" fill="currentColor"/></svg>
+                    Live
+                  </span>
                 </div>
                 <p>Instantly know if your email has been exposed in a known data breach. Your result shows which sites were involved, what data was exposed, and what to change first.</p>
               </div>
@@ -305,7 +312,10 @@
                 <div class="cap-title-row">
                   <span class="cap-phase" aria-hidden="true">Phase 2</span>
                   <h3>Threat Monitor</h3>
-                  <span class="cap-status is-coming">Coming Soon</span>
+                  <span class="cap-status is-dev">
+                    <svg class="status-icon" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 4.4V8l2.5 1.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                    In development
+                  </span>
                 </div>
                 <p>Automated daily monitoring with real-time alerts the moment new exposure is detected — so you act before attackers do, not after.</p>
               </div>
@@ -316,7 +326,10 @@
                 <div class="cap-title-row">
                   <span class="cap-phase" aria-hidden="true">Phase 3</span>
                   <h3>Security Shield</h3>
-                  <span class="cap-status is-coming">Coming</span>
+                  <span class="cap-status is-planned">
+                    <svg class="status-icon" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-dasharray="2.6 2.6"/></svg>
+                    Planned
+                  </span>
                 </div>
                 <p>The full suite: breach checking, password guidance, two-factor authentication setup, and account recovery support in one place.</p>
               </div>
@@ -327,12 +340,18 @@
                 <div class="cap-title-row">
                   <span class="cap-phase" aria-hidden="true">Phase 4</span>
                   <h3>Enterprise Fortress</h3>
-                  <span class="cap-status is-coming">Coming</span>
+                  <span class="cap-status is-planned">
+                    <svg class="status-icon" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-dasharray="2.6 2.6"/></svg>
+                    Planned
+                  </span>
                 </div>
                 <p>Built for teams and organizations — compliance reporting, multi-user monitoring, and advanced protection at scale.</p>
               </div>
             </article>
           </div>
+          <p class="section-link-row">
+            <a class="text-link" href="products.html">See all products <span aria-hidden="true">&rarr;</span></a>
+          </p>
         </div>
       </section>
 
@@ -361,6 +380,57 @@
               <p>Clear guidance on what to change and what to watch next.</p>
             </article>
           </div>
+          <p class="section-link-row">
+            <a class="text-link" href="how-it-works.html">How it works <span aria-hidden="true">&rarr;</span></a>
+            <a class="text-link" href="breach-guard.html">About Breach Guard <span aria-hidden="true">&rarr;</span></a>
+          </p>
+        </div>
+      </section>
+
+      <!-- ══════════ EXAMPLE RESULT ══════════ -->
+      <section class="section section-example" aria-label="Example result">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <span class="eyebrow">Example result</span>
+            <h2 class="section-title">What an exposed result looks like.</h2>
+          </div>
+
+          <div class="result-card" data-reveal>
+            <p class="result-note">
+              <span class="result-note-mark" aria-hidden="true">!</span>
+              Example result. Illustrative only, not a real result.
+            </p>
+
+            <div class="result-head">
+              <div class="result-head-copy">
+                <span class="result-label">Known breach found</span>
+                <p class="result-service">Example Marketplace</p>
+                <p class="result-date">March 2021</p>
+              </div>
+              <span class="status-badge is-exposed">
+                <svg class="status-icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path d="M8 1.2 15 14H1L8 1.2Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 6v3.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="8" cy="11.6" r="0.9" fill="currentColor"/></svg>
+                Exposed
+              </span>
+            </div>
+
+            <div class="result-block">
+              <h3 class="result-subhead">Data exposed</h3>
+              <ul class="chip-list">
+                <li class="chip">Email address</li>
+                <li class="chip">Password (hashed)</li>
+                <li class="chip">Phone number</li>
+              </ul>
+            </div>
+
+            <div class="result-block">
+              <h3 class="result-subhead">Do this first</h3>
+              <ol class="checklist">
+                <li>Change your password on that service.</li>
+                <li>Change it anywhere else you used it.</li>
+                <li>Turn on two-factor authentication.</li>
+              </ol>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -377,55 +447,43 @@
         </div>
       </section>
 
-      <!-- ══════════ TEAM (intentionally hidden — content kept intact for future re-enable) ══════════ -->
-      <section class="section section-founder section-hidden" id="founder" aria-label="Meet the team" hidden>
+      <!-- ══════════ TRUST PROMISES ══════════ -->
+      <section class="section section-promises" aria-label="Our promises">
         <div class="container">
-          <div class="section-head team-head" data-reveal>
-            <span class="eyebrow">Meet the Team</span>
+          <ul class="promise-grid">
+            <li class="promise" data-reveal>
+              <span class="promise-mark" aria-hidden="true">&#10003;</span>
+              <p>We don&rsquo;t ask for a password.</p>
+            </li>
+            <li class="promise" data-reveal>
+              <span class="promise-mark" aria-hidden="true">&#10003;</span>
+              <p>We don&rsquo;t store the email you check.</p>
+            </li>
+            <li class="promise" data-reveal>
+              <span class="promise-mark" aria-hidden="true">&#10003;</span>
+              <p>Something look wrong? <a href="contact.html">Tell us.</a></p>
+            </li>
+          </ul>
+          <p class="section-link-row">
+            <a class="text-link" href="security-privacy.html">How we handle your data <span aria-hidden="true">&rarr;</span></a>
+          </p>
+        </div>
+      </section>
+
+      <!-- ══════════ FAQ (short) ══════════ -->
+      <section class="section section-faq" aria-label="Common questions">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <span class="eyebrow">Questions</span>
+            <h2 class="section-title">Straight answers.</h2>
           </div>
-          <div class="founder-grid">
-            <article class="founder-card" data-reveal>
-              <div class="founder-media">
-                <img src="founder-avatar.jpg" alt="Daniel Adeleye, Founder and CEO of Tirenify"
-                     loading="lazy" width="160" height="160" />
-              </div>
-              <div class="founder-copy">
-                <h3 class="founder-name">Daniel Adeleye</h3>
-                <p class="founder-title">Founder &amp; CEO</p>
-                <p>Tirenify is built as a company with a long-term mission: digital security tools designed for the realities of African internet users, not adapted from global defaults.</p>
-              </div>
-            </article>
 
-            <!-- PLACEHOLDER TEAM MEMBER - REMOVE OR REPLACE -->
-            <article class="founder-card" data-reveal>
-              <div class="founder-media founder-avatar-placeholder" aria-hidden="true">AC</div>
-              <div class="founder-copy">
-                <h3 class="founder-name">Amara Chukwu</h3>
-                <p class="founder-title">Lead Security Engineer</p>
-                <p>Focused on breach detection systems and infrastructure security.</p>
-              </div>
-            </article>
+          <!-- Rendered from faq-data.js (first items only on the homepage) -->
+          <div class="faq-list" data-faq="short" data-reveal></div>
 
-            <!-- PLACEHOLDER TEAM MEMBER - REMOVE OR REPLACE -->
-            <article class="founder-card" data-reveal>
-              <div class="founder-media founder-avatar-placeholder" aria-hidden="true">KM</div>
-              <div class="founder-copy">
-                <h3 class="founder-name">Kwame Mensah</h3>
-                <p class="founder-title">Product Designer</p>
-                <p>Designs experiences that make security approachable for everyone.</p>
-              </div>
-            </article>
-
-            <!-- PLACEHOLDER TEAM MEMBER - REMOVE OR REPLACE -->
-            <article class="founder-card" data-reveal>
-              <div class="founder-media founder-avatar-placeholder" aria-hidden="true">FB</div>
-              <div class="founder-copy">
-                <h3 class="founder-name">Fatima Bello</h3>
-                <p class="founder-title">Backend Engineer</p>
-                <p>Builds the systems that keep breach data fast and reliable.</p>
-              </div>
-            </article>
-          </div>
+          <p class="section-link-row">
+            <a class="text-link" href="faq.html">See all questions <span aria-hidden="true">&rarr;</span></a>
+          </p>
         </div>
       </section>
 
@@ -433,10 +491,11 @@
       <section class="section section-closing" aria-label="Final call to action">
         <div class="container">
           <p class="closing-cta" data-reveal>Find out what&rsquo;s exposed. Check your email with Breach Guard.</p>
-          <a class="btn btn-primary btn-lg" href="https://check.tirenify.app/" target="_blank" rel="noopener noreferrer">
+          <a class="btn btn-primary btn-lg" href="https://check.tirenify.app/" data-checker-link>
             Check My Email
             <span class="btn-arrow" aria-hidden="true">&rarr;</span>
           </a>
+          <p class="closing-note">Free. No signup. We don&rsquo;t store the email you check.</p>
         </div>
       </section>
 
@@ -446,20 +505,54 @@
     <footer class="site-footer" role="contentinfo">
       <div class="container">
         <div class="footer-top">
-          <a class="footer-brand" href="#home" aria-label="Tirenify home">
+          <a class="footer-brand" href="index.html" aria-label="Tirenify home">
             <span class="brand-mark" aria-hidden="true">T</span>
             <span>Tirenify</span>
           </a>
           <div class="footer-desc">
             <p>Tirenify builds security tools for African internet users.</p>
           </div>
-          <nav class="footer-nav" aria-label="Footer navigation">
-            <a href="#home">Home</a>
-            <a href="#product">Product</a>
-            <a href="#how">How it works</a>
-            <a href="https://x.com/tirenify" target="_blank" rel="noopener noreferrer">Contact</a>
-          </nav>
         </div>
+
+        <nav class="footer-columns" aria-label="Footer navigation">
+          <div class="footer-col">
+            <h2 class="footer-col-title">Products</h2>
+            <ul>
+              <li><a href="breach-guard.html">Breach Guard</a></li>
+              <li><a href="products.html">All products</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h2 class="footer-col-title">Company</h2>
+            <ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h2 class="footer-col-title">Resources</h2>
+            <ul>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="how-it-works.html">How it works</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h2 class="footer-col-title">Trust</h2>
+            <ul>
+              <li><a href="security-privacy.html">Security &amp; Privacy</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h2 class="footer-col-title">Social</h2>
+            <ul>
+              <li>
+                <a class="social-link" href="https://x.com/tirenify" target="_blank" rel="noopener noreferrer" aria-label="Tirenify on X (@tirenify)">
+                  <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
         <div class="footer-bottom">
           <p>&copy; 2026 Tirenify. All rights reserved.</p>
           <p class="footer-credit">Built for the threats here, not adapted from elsewhere.</p>
@@ -468,6 +561,8 @@
     </footer>
 
   </div>
+  <script src="site-config.js"></script>
+  <script src="faq-data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

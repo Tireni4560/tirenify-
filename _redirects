@@ -1,0 +1,17 @@
+# Clean slugs (as used in canonical tags and the sitemap) mapped to the flat
+# .html pages, so /products etc. also work on direct load and refresh on hosts
+# that read this file (Cloudflare Pages, Netlify). 200 = rewrite, not a redirect.
+/products          /products.html          200
+/products/         /products.html          200
+/breach-guard      /breach-guard.html      200
+/breach-guard/     /breach-guard.html      200
+/how-it-works      /how-it-works.html      200
+/how-it-works/     /how-it-works.html      200
+/security-privacy  /security-privacy.html  200
+/security-privacy/ /security-privacy.html  200
+/about             /about.html             200
+/about/            /about.html             200
+/faq               /faq.html               200
+/faq/              /faq.html               200
+/contact           /contact.html           200
+/contact/          /contact.html           200
