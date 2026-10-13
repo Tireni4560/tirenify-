@@ -1599,3 +1599,19 @@ textarea.form-control { resize: vertical; min-height: 140px; }
   .skip-link { transition: none; }
 }
 
+
+/* Force the company website to use its intended light theme */
+:root {
+  color-scheme: light;
+  color-scheme: only light;
+}
+
+html {
+  color-scheme: only light;
+  background-color: #ffffff;
+}
+
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
