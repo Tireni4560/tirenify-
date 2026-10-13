@@ -12,9 +12,25 @@ window.TIRENIFY_FAQ = {
   // Items flagged `short: true` are the four shown on the homepage.
   items: [
     {
+      q: 'Is Tirenify only about email?',
+      a: 'No. Email breaches are where we started because almost anyone can check in seconds. Tirenify is about digital security more broadly: account takeovers including WhatsApp, scam messages and phishing that imitate banks and mobile-money services, and SIM-swap risk. We\u2019re building towards these step by step.'
+    },
+    {
+      q: 'What is your first product?',
+      a: 'Our first product is a security hub with an email breach checker, called Breach Guard. It\u2019s free, needs no account, and also includes everyday security tools that run in your browser.'
+    },
+    {
+      q: 'Is it finished?',
+      a: 'Not yet. It\u2019s in public beta. It works today, and we\u2019re still adding tools and improving it. Tell us what you think on the Contact page.'
+    },
+    {
+      q: 'Do the tools send what I type anywhere?',
+      a: 'No. The password, QR code and other tools run in your browser and don\u2019t send what you type anywhere. Only the breach check sends your email, to our breach-data provider, to run the check.'
+    },
+    {
       q: 'Is it really free?',
       short: true,
-      a: 'Breach Guard is free, and there\u2019s no account. If that changes later, paid features would be new tools, not a paywall in front of the check.'
+      a: 'Our security hub is free, and there\u2019s no account. If that changes later, paid features would be new tools, not a paywall in front of the check.'
     },
     {
       q: 'Do I need an account?',
@@ -31,7 +47,7 @@ window.TIRENIFY_FAQ = {
       a: 'Work through the steps in your result. Change the password on that service, change it anywhere you reused it, turn on two-factor authentication.'
     },
     {
-      q: 'Does \u201Csafe\u201D mean I\u2019m fully secure?',
+      q: 'Does \u201Cno known breach\u201D mean I\u2019m fully secure?',
       short: true,
       a: 'No. It means no known breach contains your address. Breaches get disclosed late, and some never are.'
     },
@@ -41,7 +57,7 @@ window.TIRENIFY_FAQ = {
     },
     {
       q: 'Are more products coming?',
-      a: 'Yes. Breach Guard is the first. Tell us what you want protected next and we\u2019ll let you know when it\u2019s here.',
+      a: 'Yes. Our security hub with Breach Guard is the first. Tell us what you want protected next and we\u2019ll let you know when it\u2019s here.',
       link: { href: 'products.html', text: 'See what we\u2019re building next' }
     },
     {

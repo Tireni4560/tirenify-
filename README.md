@@ -28,7 +28,7 @@ This repository contains the frontend homepage experience for the Tirenify platf
 - `404.html` — friendly not-found page
 - `robots.txt`, `sitemap.xml`, `.well-known/security.txt` — SEO and security contact files
 - `_redirects` — clean-slug rewrites (`/products` → `products.html`) for hosts that support them
-- `favicon.svg`, `og-image.jpg`, `me.jpg` — brand assets
+- `favicon.svg`, `og-image.jpg`, `menocompression.png` — brand assets
 - The X (formerly Twitter) icon in the footer and About button is loaded from the Font Awesome 6 CDN
   (cdnjs); no local icon image or SVG is used for it
 
