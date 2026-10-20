@@ -140,25 +140,20 @@ a { color: inherit; text-decoration: none; }
 
 .brand { display: inline-flex; align-items: center; gap: 0.7rem; }
 
-.brand-mark {
-  width: 34px; height: 34px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--bg-deep);
-  color: var(--on-dark);
-  border-radius: 9px;
-  font-weight: 700;
-  font-size: 19px;
-  line-height: 1;
+/* ===== BRAND LOGO IMAGES =====
+   The logo is supplied as pre-outlined SVG (no font is loaded for the
+   wordmark). Two variants are rendered in the header so the wordmark stays
+   legible when the dark mobile-menu overlay is open. */
+.brand-logo,
+.footer-logo {
+  display: block;
+  width: auto;
 }
-
-.brand-name {
-  font-size: 21px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  white-space: nowrap;
-}
+.brand-logo { height: 26px; }
+.footer-logo { height: 24px; }
+.brand-logo-dark { display: none; }
+body.nav-open .brand-logo-light { display: none; }
+body.nav-open .brand-logo-dark { display: block; }
 
 /* Trust pill (Nodus-style honest signal) */
 .trust-pill {
@@ -300,13 +295,11 @@ body.nav-open .site-header {
   backdrop-filter: none;
   border-color: transparent;
 }
-body.nav-open .brand-name { color: var(--bg); }
 body.nav-open .hamburger-line { background: var(--bg); }
 body.nav-open .trust-pill {
   color: var(--bg);
   background: rgba(255, 255, 255, 0.12);
 }
-body.nav-open .brand-mark { background: var(--bg); color: var(--bg-deep); }
 /* ===== HERO ===== */
 .hero {
   position: relative;
@@ -360,16 +353,6 @@ body.nav-open .brand-mark { background: var(--bg); color: var(--bg-deep); }
    the hero's bottom margin doesn't double up on the section padding */
 .proof-strip .hero-meta { margin-top: 0; }
 
-/* ===== WORDMARK ENTRANCE ===== */
-.wordmark .letter {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(0.35em);
-}
-.started .wordmark .letter {
-  animation: letterIn 0.7s var(--ease) both;
-  animation-delay: calc(0.1s + var(--i) * 60ms);
-}
 /* ===== TECHNICAL DIAGRAM ===== */
 .diagram-wrap {
   position: relative;
@@ -805,7 +788,7 @@ body.nav-open .brand-mark { background: var(--bg); color: var(--bg-deep); }
 /* Mobile */
 @media (max-width: 640px) {
   .header-inner { height: 64px; }
-  .brand-name { font-size: 19px; }
+  .brand-logo { height: 24px; }
   .hero-title { font-size: clamp(36px, 11vw, 48px); }
   .hero-support { font-size: 17px; }
   .hero-meta { font-size: 11px; }
@@ -831,7 +814,7 @@ body.nav-open .brand-mark { background: var(--bg); color: var(--bg-deep); }
 @media (max-width: 380px) {
   .hero-actions .btn-lg { width: 100%; }
   .hero-title { font-size: 34px; }
-  .brand-name { font-size: 18px; }
+  .brand-logo { height: 22px; }
   .trust-pill { display: none; }
 }
 
@@ -855,7 +838,7 @@ body.nav-open .brand-mark { background: var(--bg); color: var(--bg-deep); }
     animation-duration: 0.001s !important;
     transition-duration: 0.001s !important;
   }
-  .wordmark .letter, .hero-copy > *, [data-reveal] {
+  .hero-copy > *, [data-reveal] {
     opacity: 1 !important;
     transform: none !important;
   }
@@ -873,12 +856,12 @@ body.nav-open .brand-mark { background: var(--bg); color: var(--bg-deep); }
   overflow-wrap: break-word;
 }
 
-/* Engine hub pulse */
-@keyframes letterIn {
+/* Hero reveal keyframes */
+@keyframes riseIn {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Hero content reveal after wordmark */
+/* Hero content reveal */
 .hero-copy > * {
   opacity: 0;
   transform: translateY(18px);
@@ -891,11 +874,6 @@ body.nav-open .brand-mark { background: var(--bg); color: var(--bg-deep); }
 .started .hero-copy > *:nth-child(3) { animation-delay: 0.9s; }
 .started .hero-copy > *:nth-child(4) { animation-delay: 0.98s; }
 .started .hero-copy > *:nth-child(5) { animation-delay: 1.06s; }
-
-@keyframes riseIn {
-  to { opacity: 1; transform: translateY(0); }
-}
-
 /* ============================================================
    MULTI-PAGE ADDITIONS
    Built on the existing tokens, fonts, spacing and radii.

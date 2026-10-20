@@ -29,6 +29,9 @@ yarn-error.log*
 .DS_Store
 Thumbs.db
 
+# Local working folder — never commit or publish
+project assets/
+
 # Optional: lockfiles (uncomment if you don't want to track lock files)
 # package-lock.json
 # yarn.lock

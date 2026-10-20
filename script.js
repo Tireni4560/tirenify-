@@ -8,35 +8,13 @@
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ─── WORDMARK ENTRANCE ─────────────────────────────── */
-  function splitWordmark() {
-    var el = document.querySelector('.wordmark[data-split]');
-    if (!el) return;
-    var text = el.getAttribute('data-split') || el.textContent;
-    el.textContent = '';
-    var frag = document.createDocumentFragment();
-    var i, letter;
-    for (i = 0; i < text.length; i++) {
-      letter = document.createElement('span');
-      letter.className = 'letter';
-      letter.style.setProperty('--i', String(i));
-      if (text[i] === ' ') {
-        letter.innerHTML = '&nbsp;';
-      } else {
-        letter.textContent = text[i];
-      }
-      frag.appendChild(letter);
-    }
-    el.appendChild(frag);
-  }
-  splitWordmark();
-
+  /* ─── ENTRANCE ─────────────────────────────────────── */
   var started = false;
   function startEntrance() {
     if (started) return;
     started = true;
     document.body.classList.add('started');
-    // Trigger diagram draw after wordmark settles
+    // Trigger diagram draw after the hero copy settles
     window.setTimeout(activateDiagram, reduceMotion ? 200 : 1450);
   }
 

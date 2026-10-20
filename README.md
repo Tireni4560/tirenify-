@@ -28,7 +28,14 @@ This repository contains the frontend homepage experience for the Tirenify platf
 - `404.html` — friendly not-found page
 - `robots.txt`, `sitemap.xml`, `.well-known/security.txt` — SEO and security contact files
 - `_redirects` — clean-slug rewrites (`/products` → `products.html`) for hosts that support them
-- `favicon.svg`, `og-image.jpg`, `menocompression.png` — brand assets
+- `favicon.ico`, `favicon.svg`, `apple-touch-icon.png` — browser/app icons (ICO, SVG and 180×180 PNG)
+- `brand/` — logo and icon source assets:
+  - `tirenify-logo-horizontal-{light,dark,mono-black,mono-white}.svg` — horizontal lockup used in the
+    header and footer. The header renders both the light and dark variants and swaps them via CSS
+    when the dark mobile-menu overlay opens (`body.nav-open`).
+  - `tirenify-symbol-{light,dark,mono-black}.svg` — symbol-only mark (not currently placed on a page)
+  - `favicon-{16,32,48,512}.png` — raster fallbacks; the 16/32/48 files are also packed into `favicon.ico`
+- `og-image.jpg`, `menocompression.png` — brand assets (social preview image is unchanged by the logo rollout)
 - The X (formerly Twitter) icon in the footer and About button is loaded from the Font Awesome 6 CDN
   (cdnjs); no local icon image or SVG is used for it
 
