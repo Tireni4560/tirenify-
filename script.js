@@ -362,6 +362,37 @@
     });
   }
 
+  /* ─── EMAIL DEMO (illustrative) ─────────────────────── */
+  function setupEmailDemo() {
+    var input = document.getElementById('email-demo-input');
+    var btn = document.getElementById('email-demo-btn');
+    var breach = document.getElementById('demo-breach');
+    var clean = document.getElementById('demo-clean');
+    if (!input || !btn || !breach || !clean) return;
+
+    var timer = null;
+    var showBreach = true;
+    function render() {
+      if (showBreach) { breach.hidden = false; clean.hidden = true; }
+      else { breach.hidden = true; clean.hidden = false; }
+    }
+    function cycle() { showBreach = !showBreach; render(); }
+    function startCycle() { if (timer) clearInterval(timer); timer = setInterval(cycle, 4500); }
+    function stopCycle() { if (timer) { clearInterval(timer); timer = null; } }
+
+    input.addEventListener('focus', stopCycle);
+    input.addEventListener('blur', startCycle);
+    btn.addEventListener('click', function () {
+      window.location.href = 'https://safeyard.tirenify.app/breach-guard';
+    });
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') { e.preventDefault(); window.location.href = 'https://safeyard.tirenify.app/breach-guard'; }
+    });
+
+    render();
+    startCycle();
+  }
+
 /* ─── INIT ──────────────────────────────────────────── */
   function init() {
     setupHeader();
@@ -371,6 +402,7 @@
     renderFaq();
     setupSourceNote();
     setupForms();
+    setupEmailDemo();
 
     if (window.performance && window.performance.timing) {
       // Entrance staged after first paint

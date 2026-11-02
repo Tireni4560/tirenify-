@@ -757,6 +757,24 @@ body.nav-open .trust-pill {
   color: var(--text-3);
 }
 .footer-credit { font-family: var(--font-mono); letter-spacing: 0.03em; }
+/* ===== EMAIL DEMO (illustrative) ===== */
+.email-demo { margin-top: 2rem; max-width: 560px; }
+.email-demo-input-row { display: flex; gap: 0.6rem; }
+.email-demo-input { flex: 1; min-height: 44px; padding: 0.6rem 0.9rem; border: 1px solid var(--border); border-radius: 10px; font-size: 15px; background: var(--bg-card); }
+.email-demo-btn { min-height: 44px; }
+.email-demo-flow { margin: 0.6rem 0; color: var(--text-3); }
+.email-demo-result { margin-top: 0.6rem; }
+.demo-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1rem; }
+.demo-status { font-weight: 700; margin-bottom: 0.5rem; }
+.demo-status-alert { color: var(--alert); }
+.demo-status-safe { color: var(--accent); }
+.demo-row { display: flex; justify-content: space-between; gap: 1rem; font-size: 14px; padding: 0.25rem 0; }
+.email-demo-note { font-size: 12px; color: var(--text-3); margin-top: 0.5rem; }
+@media (max-width: 640px) {
+  .email-demo-input-row { flex-direction: column; }
+  .email-demo-btn { width: 100%; }
+}
+
 /* ===== RESPONSIVE ===== */
 
 /* Mobile nav breakpoint: hamburger below 1024px, desktop nav above */
@@ -793,6 +811,9 @@ body.nav-open .trust-pill {
   .hero-support { font-size: 17px; }
   .hero-meta { font-size: 11px; }
   .diagram-inner { max-width: min(100%, 430px); }
+
+  .section-company { padding-top: 64px; }
+  .section-company .section-title { font-size: clamp(28px, 8vw, 36px); }
 
   .section { padding: clamp(3rem, 11vw, 4.5rem) 0; }
   .section-closing { padding: clamp(3rem, 11vw, 4.5rem) 0; }
