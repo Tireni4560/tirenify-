@@ -113,28 +113,35 @@
               <p class="hero-support" data-reveal><strong>Safeyard by Tirenify</strong> — For freelancers, tech enthusiasts, and people who use email every day and can't afford a breach. It checks whether your email appeared in known data breaches, shows what was exposed, and tells you what to do next.</p>
             </div>
             <div class="hero-demo-col">
-              <!-- Email demo (illustrative only) -->
-              <div class="email-demo" data-reveal aria-label="Illustrative email check demo">
-                <div class="email-demo-input-row">
-                  <input type="email" class="email-demo-input" id="email-demo-input" placeholder="Enter your email" aria-label="Email address (demo)" />
-                  <button type="button" class="btn btn-primary email-demo-btn" id="email-demo-btn">Check</button>
+              <!-- Visual analogy (illustrative only) -->
+              <div class="flow-diagram" aria-label="Illustrative email flow diagram">
+                <div class="flow-node flow-top" data-flow="1">
+                  <span class="flow-label">PROTECT</span>
+                  <div class="flow-shield">TIRENIFY</div>
                 </div>
-                <div class="email-demo-flow" aria-hidden="true">
-                  <span class="email-demo-arrow">&rarr;</span>
+                <div class="flow-connector"><span>watches over YOUR EMAIL</span></div>
+                <div class="flow-node flow-input" data-flow="2">
+                  <input type="email" class="flow-input-field" placeholder="youremail@example.com" aria-label="Email (demo)" />
                 </div>
-                <div class="email-demo-result" id="email-demo-result" aria-live="polite">
-                  <div class="demo-card demo-breach" id="demo-breach">
-                    <div class="demo-status demo-status-alert">Breach found</div>
-                    <div class="demo-row"><strong>Service</strong><span>Example Marketplace</span></div>
-                    <div class="demo-row"><strong>Date</strong><span>March 2021</span></div>
-                    <div class="demo-row"><strong>Exposed</strong><span>Email, Password, Phone</span></div>
+                <div class="flow-connector"><span>checked against</span></div>
+                <div class="flow-node flow-db" data-flow="3">
+                  <span class="flow-label">EXISTING DATA</span>
+                  <div class="flow-db-box">Known Breach Databases</div>
+                </div>
+                <div class="flow-connector"><span>REVEALS</span></div>
+                <div class="flow-results" data-flow="4">
+                  <div class="flow-card flow-safe is-active" id="flow-safe">
+                    <span class="flow-icon">✓</span>
+                    <strong>Already Safe</strong>
+                    <small>no breach found</small>
                   </div>
-                  <div class="demo-card demo-clean" id="demo-clean" hidden>
-                    <div class="demo-status demo-status-safe">No known breaches found</div>
-                    <p class="demo-clean-msg">No known breaches found for this address.</p>
+                  <div class="flow-card flow-exposed" id="flow-exposed">
+                    <span class="flow-icon">!</span>
+                    <strong>Already Exposed</strong>
+                    <small>get protected now</small>
                   </div>
                 </div>
-                <p class="email-demo-note">Illustrative only — not a real result</p>
+                <p class="flow-note">Illustrative only — not a real result</p>
               </div>
             </div>
           </div>

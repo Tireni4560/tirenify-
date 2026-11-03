@@ -362,6 +362,23 @@
     });
   }
 
+  /* ─── FLOW DIAGRAM (illustrative) ───────────────────── */
+  function setupFlowDiagram() {
+    var safe = document.getElementById('flow-safe');
+    var exposed = document.getElementById('flow-exposed');
+    if (!safe || !exposed) return;
+    var paused = false;
+    var activeSafe = true;
+    function render() {
+      safe.classList.toggle('is-active', activeSafe);
+      exposed.classList.toggle('is-active', !activeSafe);
+    }
+    var timer = setInterval(function () { if (!paused) { activeSafe = !activeSafe; render(); } }, 3000);
+    safe.addEventListener('click', function () { paused = true; activeSafe = true; render(); });
+    exposed.addEventListener('click', function () { paused = true; activeSafe = false; render(); });
+    render();
+  }
+
   /* ─── EMAIL DEMO (illustrative) ─────────────────────── */
   function setupEmailDemo() {
     var input = document.getElementById('email-demo-input');
@@ -403,6 +420,7 @@
     setupSourceNote();
     setupForms();
     setupEmailDemo();
+    setupFlowDiagram();
 
     if (window.performance && window.performance.timing) {
       // Entrance staged after first paint
